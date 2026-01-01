@@ -1,0 +1,57 @@
+/*
+.galeria {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria img {
+   max-height: 600px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 16px;
+}
+  .banner {
+  width: 100%;
+  height: auto;
+  background-image: url("../imagenes/AAA_0141.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+*/
+
+
+.galeria {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slider-track img {
+  width: 300px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
