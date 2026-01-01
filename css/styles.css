@@ -1,28 +1,51 @@
-/*
-.galeria {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+html, body {
+  margin: 0;
+  padding: 0;
 }
+/* Header, inicio */
+.hero {
+  width: 100%;
+  height: 80vh;
 
-.galeria img {
-   max-height: 600px;
-  width: auto;
-  margin: 0 auto;
-  display: block;
-  border-radius: 16px;
-}
-  .banner {
-  width: 100%;
-  height: auto;
-  background-image: url("../imagenes/AAA_0141.jpg");
+  background-image: url("../imagenes/AAA_0142.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 16px;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
 }
-*/
 
+.hero-content {
+  background: rgba(0, 0, 0, 0.45); /* capa oscura */
+  color: white;
+  padding: 30px 40px;
+  margin-left: 60px;
+  border-radius: 8px;
+}
 
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.hero p {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Header, fin*/
+
+/* Galeria, inicio */
 .galeria {
   display: flex;
   align-items: center;
@@ -55,3 +78,127 @@
   cursor: pointer;
 }
 
+
+/* Header, fin */
+
+/* Navbar, inicio */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+/* Header, inicio */
+.hero {
+  width: 100%;
+  height: 80vh;
+
+  background-image: url("../imagenes/AAA_0142.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.45); /* capa oscura */
+  color: white;
+  padding: 30px 40px;
+  margin-left: 60px;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.hero p {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+}
+
+.hero button {
+  padding: 10px 18px;
+  border: none;
+  background: #ffffff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Header, fin*/
+
+/* Galeria, inicio */
+.galeria {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slider-track img {
+  width: 300px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Header, fin */
+
+/* Navbar, inicio */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0;
+}
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  background-color: #111111;
+}
+
+/*Navbar, fin*/
+
+
+
+section ul {
+  list-style: disc;
+  padding-left: 20px;
+  background: none;
+}
+
+section ul li {
+  margin-bottom: 6px;
+}
