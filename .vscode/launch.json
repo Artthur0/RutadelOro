@@ -6,7 +6,7 @@
     "configurations": [
         
         {
-            "type": "chrome",
+            "type": "",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:5500",
