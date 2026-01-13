@@ -373,3 +373,55 @@ section {
         font-size: 1.8rem;
     }
 }
+
+
+/* =====================
+   CARDS – JERARQUÍA VISUAL
+===================== */
+
+.card-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--dark);
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 0.6rem;
+}
+
+.card .btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.card img {
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card.placeholder {
+    background-color: var(--light-gray);
+    border: 2px dashed #ddd;
+    box-shadow: none;
+    min-height: 280px;
+}
+
+.card.placeholder p {
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.card.placeholder:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.card {
+    cursor: pointer;
+}
