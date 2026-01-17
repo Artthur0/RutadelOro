@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Meta básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título -->
     <title>Hacienda Ruta del Oro</title>
 
+    <!-- Estilos -->
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Iconos y fuentes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
+
 <body>
 
-    <!-- HERO -->
+    <!-- HERO / PORTADA -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Hacienda ruta del Oro</h1>
+            <h1>Hacienda Ruta del Oro</h1>
             <h2>Un lugar único para momentos inolvidables</h2>
             <p>Hualqui</p>
             <a href="#informacion" class="hero-btn">Solicitar Información</a>
-
         </div>
     </section>
-     <!-- HEADER -->
+
+    <!-- NAVEGACIÓN -->
     <header>
         <nav class="navbar">
             <ul>
-                <li class="nav-item"><a href="#inicio">Inicio</a></li>
-                <li class="nav-item"><a href="#galeria">Galería</a></li>
-                <li class="nav-item"><a href="#informacion">Información</a></li>
-                <li class="nav-item"><a href="#servicios">Servicios</a></li>
-                <li class="nav-item"><a href="#opiniones">Opiniones</a></li>
-                <li class="nav-item"><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#comentarios">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-
-    
 
     <!-- DATOS DE INTERÉS -->
     <section id="datos-interes">
@@ -48,8 +54,8 @@
             <li>Jardín, terraza y carpa</li>
             <li>Capilla</li>
             <li>Cocina para catering</li>
-            <li>Solo hace 1 evento por dia</li>
-            <li>Cuenta con estacionamiento</li>
+            <li>Un evento por día</li>
+            <li>Estacionamiento</li>
             <li>Hasta las 03:00</li>
         </ul>
     </section>
@@ -58,13 +64,12 @@
     <section id="informacion">
         <h2>Información</h2>
         <p>
-            Hacienda Ruta del Oro es un exclusivo espacio campestre que abre las puertas de sus instalaciones
-            para que vivan una celebración de boda muy especial y memorable para todos. Podrán disfrutar de
-            la grandeza de su natural entorno que de seguro aportará un toque inigualable a su gran día.
+            Hacienda Ruta del Oro es un exclusivo espacio campestre para celebraciones
+            especiales, rodeado de naturaleza y pensado para momentos inolvidables.
         </p>
     </section>
 
-    <!-- SERVICIOS / FAQ -->
+    <!-- SERVICIOS -->
     <section id="servicios">
         <h2>Servicios</h2>
         <ul>
@@ -76,32 +81,13 @@
 
     <!-- GALERÍA -->
     <section id="galeria">
-            <h2>Galería</h2>
-        <button class="btn prev">‹</button>
+        <button class="btn prev" aria-label="Anterior">‹</button>
 
-            <div class="slider">
-                <div class="slider-track">
-                <img src="imagenes/AAA_0141.jpg" alt="Galería">
-                <img src="imagenes/AAA_0190.jpg" alt="Galería">
-                <img src="imagenes/AAA_2104.jpg" alt="Galería">
-                <img src="imagenes/AAA_0142.jpg" alt="Galería">
-                <img src="imagenes/AAA_2142.jpg" alt="Galería">
-                <img src="imagenes/AAA_2558.jpg" alt="Galería">
-                <img src="imagenes/AAA_1916.jpg" alt="Galería">
-                </div>
-            </div>
+        <div class="slider">
+            <div class="slider-track"></div>
+        </div>
 
-        <button class="btn next">›</button>
-    </section>
-
-    <section id="proveedores">
-        <h2>Proveedores</h2>
-        <ul>
-            <li>Banquetería: Banquetería La Casona</li>
-            <li>Música: DJ Rodrigo Muñoz</li>
-            <li>Decoración: Eventos y Decoraciones Alegría</li>
-            <li>Fotografía: Fotografía y Video R&G</li>
-        </ul>
+        <button class="btn next" aria-label="Siguiente">›</button>
     </section>
 
     <!-- OPINIONES -->
@@ -111,32 +97,32 @@
         <div class="comentario-card">
             <h3>Damaris</h3>
             <div class="estrellas">★★★★★</div>
-            <h3>Excelente lugar</h3>
-            <p></p>
+            <p>Excelente lugar</p>
             <button>Ver más</button>
         </div>
 
-        <div class="comentario-card">
-            <h3>Leslie</h3>
+        <div class="comentario-card">  
+            <h3>Leslie</h3> 
+            <div class="estrellas">★★★★★</div> 
+            <p>Magnífico lugar...</p> 
+            <button>Ver más</button> 
+        </div> 
+
+        <div class="comentario-card"> 
+            <h3>Nathalie R.</h3> 
             <div class="estrellas">★★★★★</div>
-            <p>Magnífico lugar...</p>
-            <button>Ver más</button>
+             <p>Magnífico lugar...</p> 
+             <button>Ver más</button>
+        </div> 
+
+        <div class="comentario-card">       
+            <h3>Maca B.</h3> 
+            <div class="estrellas">★★★★★</div> 
+            <p>Magnífico lugar...</p> 
+            <button>Ver más</button> 
         </div>
 
-        <div class="comentario-card">
-            <h3>Nathalie R.</h3>
-            <div class="estrellas">★★★★★</div>
-            <p>Magnífico lugar...</p>
-            <button>Ver más</button>
-        </div>
-
-        <div class="comentario-card">
-            <h3>Maca B.</h3>
-            <div class="estrellas">★★★★★</div>
-            <p>Magnífico lugar...</p>
-            <button>Ver más</button>
-        </div>
-        <!-- aquí irán más tarjetas -->
+        <!-- Más tarjetas aquí -->
     </section>
 
     <!-- CONTACTO -->
@@ -152,8 +138,9 @@
         <p>© 2026 Hacienda Ruta del Oro</p>
     </footer>
 
-    
-</body>
-<script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="script.js"></script>
 
+</body>
 </html>
