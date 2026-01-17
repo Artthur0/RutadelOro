@@ -39,7 +39,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#informacion">Información</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#" class="ver-servicios-btn">Servicios</a></li>
                 <li><a href="#comentarios">Opiniones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -49,35 +49,119 @@
     <!-- DATOS DE INTERÉS -->
     <section id="datos-interes">
         <h2>Datos de interés</h2>
-        <ul>
-            <li>En el campo</li>
-            <li>Jardín, terraza y carpa</li>
-            <li>Capilla</li>
-            <li>Cocina para catering</li>
-            <li>Un evento por día</li>
-            <li>Estacionamiento</li>
-            <li>Hasta las 03:00</li>
-        </ul>
+
+        <div class="datos-grid">
+            <div class="dato-item">
+            <i class="fa-solid fa-tree"></i>
+            <span>En el campo</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Jardín, terraza, carpa</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-church"></i>
+            <span>Capilla</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-kitchen-set"></i>
+            <span>Cocina para catering</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-calendar-day"></i>
+            <span>Un evento por día</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Hasta las 03:00</span>
+            </div>
+
+            <div class="dato-item">
+            <i class="fa-solid fa-square-parking"></i>
+            <span>Estacionamiento</span>
+            </div>
+        </div>
+
+        <a href="#servicios" class="ver-servicios-btn">
+            Ver todos los servicios
+        </a>
     </section>
+
 
     <!-- INFORMACIÓN -->
     <section id="informacion">
         <h2>Información</h2>
         <p>
-            Hacienda Ruta del Oro es un exclusivo espacio campestre para celebraciones
-            especiales, rodeado de naturaleza y pensado para momentos inolvidables.
+            Hacienda Ruta del Oro es un exclusivo espacio campestre que abre las puertas de sus instalaciones para que vivan una
+            celebración de boda muy especial y memorable para todos.
+            Podrán disfrutar de la grandeza de su natural entorno que de seguro aportará un toque inigualable a su gran día.
         </p>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <ul>
-            <li>Banquetería incluida</li>
-            <li>Un evento por día</li>
-            <li>No cuenta con alojamiento</li>
-        </ul>
+    <section class="espacios">
+    <h2>Espacios y capacidades</h2>
+
+    <p class="espacios-resumen">
+        Dentro de las instalaciones destaca una hermosa carpa para bodas,
+        piso alfombrado y cortinaje blanco, con espacios disponibles de hasta
+        150 personas y posibilidad de extensión según requerimientos.
+    </p>
+
+    <ul class="espacios-lista">
+        <li>Salón</li>
+        <li>Pista de baile</li>
+        <li>Estacionamiento</li>
+    </ul>
+
+    <button class="leer-mas-btn">Leer más</button>
+
+    <!-- CONTENIDO OCULTO -->
+       <div class="espacios-extra">
+
+            <ul class="espacios-lista">
+                <li>2 barras para servicio de bar</li>
+                <li>Cocina equipada</li>
+                <li>Terraza</li>
+                <li>Jardín</li>
+                <li>Área para boda al aire libre</li>
+                <li>Bosque con árboles nativos para sesión de fotos</li>
+            </ul>
+
+            <h3>Servicios que ofrece</h3>
+
+            <p>
+                Además de un escenario inigualable para su boda, podrán disfrutar de
+                prestaciones de gran calidad con las que sorprender a sus invitados.
+                Como por ejemplo:
+            </p>
+
+            <ul class="servicios-lista">
+                <li>Banquete</li>
+                <li>Decoración</li>
+                <li>Bar abierto</li>
+                <li>Fotografía</li>
+                <li>Música</li>
+            </ul>
+
+            <h3>Ubicación</h3>
+
+            <p>
+                Esta acogedora parcela se encuentra en Concepción, en un hermoso entorno
+                donde les espera un equipo experto en eventos. No se arrepentirán.
+            </p>
+
+        </div>
+
     </section>
+
+    <br>
+    <br>
+    <br>
 
     <!-- GALERÍA -->
     <section id="galeria">
@@ -90,6 +174,8 @@
         <button class="btn next" aria-label="Siguiente">›</button>
     </section>
 
+    <br><br><br>
+    
     <!-- OPINIONES -->
     <section id="comentarios">
         <h2>Opiniones</h2>
@@ -138,7 +224,34 @@
         <p>© 2026 Hacienda Ruta del Oro</p>
     </footer>
 
-    <!-- Scripts -->
+   
+
+    <!-- MODAL SERVICIOS -->
+    <div id="modal-servicios" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Cerrar">&times;</button>
+
+        <h2>Servicios</h2>
+
+        <ul class="servicios-lista">
+        <li>Banquetería incluida</li>
+        <li>Un evento por día</li>
+        <li>Capilla</li>
+        <li>Jardín, terraza y carpa</li>
+        <li>Cocina equipada para catering</li>
+        <li>Estacionamiento privado</li>
+        <li>Horario hasta las 03:00</li>
+        <li>Decoración personalizable</li>
+        <li>Cabaña para dos personas</li>
+        <li>Cabina fotográfica</li>
+        <li>Plataforma 360</li>
+        <li>Caja de cristal</li>
+        <li>telefono rojo de mensajes para invitados</li>
+        </ul>
+    </div>
+    </div>
+
+     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="script.js"></script>
 

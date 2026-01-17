@@ -118,3 +118,168 @@ h3 { font-size: 1.2rem; }
     width: 240px;
   }
 }
+
+
+/* DATOS DE INTERÉS */
+#datos-interes {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.datos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.dato-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+  color: #2b2b2b;
+}
+
+.dato-item i {
+  font-size: 1.4rem;
+  color: #c9a24d; /* dorado suave */
+}
+
+/* BOTÓN */
+.ver-servicios-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 22px;
+  border: 1px solid #e6cf8b;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.ver-servicios-btn:hover {
+  background: #fff6dc;
+}
+
+/* MODAL GENERAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* CAJA DEL MODAL */
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 520px;
+  width: 90%;
+  max-height: 80vh;
+  padding: 30px 34px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* BOTÓN CERRAR */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* LISTA DE SERVICIOS */
+.servicios-lista {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.servicios-lista li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/*Seccion espacios*/
+
+.espacios {
+  margin-top: 60px;
+}
+
+.espacios h2 {
+  margin-bottom: 15px;
+}
+
+.espacios-resumen {
+  max-width: 700px;
+  margin-bottom: 15px;
+}
+
+.espacios-lista {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.leer-mas-btn {
+  background: none;
+  border: none;
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0;
+}
+.espacios-extra h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.espacios-extra p {
+  max-width: 750px;
+  margin-bottom: 15px;
+}
+
+.espacios-extra ul {
+  margin-bottom: 20px;
+}
+
+
+/* CONTENIDO OCULTO */
+.espacios-extra {
+  display: none;
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.espacios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.espacios-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.espacios-grid li {
+  margin-bottom: 8px;
+}
+
