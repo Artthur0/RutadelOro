@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Eventos</title>
+    <title>Bodas y Centros</title>
 
     <!-- CSS global -->
     <link rel="stylesheet" href="public/css/main.css">
@@ -16,13 +16,78 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
-            <h1 class="logo">Plataforma Eventos</h1>
-            
-            <i class="fa-solid fa-bars menu-toggle"></i>
-
+            <h1 class="logo">Bodas y Centros</h1>
             <nav class="nav-links">
-                <a href="#centros">Centros</a>
-                <a href="#proveedores">Proveedores</a>
+                <div class="dropdown"> <!-- Centros de eventos -->
+                    <a href="#centros" class="dropbtn">
+                        Lugares para Boda <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <h4>Tipos de Espacio</h4>
+                            <a href="#">Fincas</a>
+                            <a href="#">Hoteles</a>
+                            <a href="#">Salones de Boda</a>
+                            <a href="#">Cortijos</a>
+                        </div>
+                        <div class="column">
+                            <h4>Estilos</h4>
+                            <a href="#">Bodegas</a>
+                            <a href="#">Bodas en la playa</a>
+                            <a href="#">Masías</a>
+                            <a href="#">Castillos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown"> <!-- Proveedores -->  
+                    <a href="#proveedores" class="dropbtn">
+                        Proveedores <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+
+                    <div class="dropdown-content">
+                        
+                        <div class="column">
+                            <h4>Empieza a contratar</h4>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-camera"></i> Fotógrafos</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-video"></i> Vídeo</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-utensils"></i> Catering</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-leaf"></i> Floristerías</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-plane"></i> Viaje de novios</a>
+                        </div>
+
+                        <div class="column">
+                            <h4 style="visibility: hidden;">.</h4> 
+                            
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-music"></i> Música</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-car"></i> Coches de boda</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-bus"></i> Autobuses</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-envelope"></i> Invitaciones</a>
+                            <a href="#" class="link-with-icon"><i class="fa-solid fa-gift"></i> Detalles</a>
+
+                            <div class="sub-category">
+                                <h5>Otras Categorías</h5>
+                                <a href="#">Mobiliario</a>
+                                <a href="#">Carpas</a>
+                                <a href="#">Animación</a>
+                                <a href="#">Organización</a>
+                                <a href="#">Tartas de boda</a>
+                            </div>
+                        </div>
+
+                        <div class="column promo-container">
+                            <div class="promo-box mb-2">
+                                <h4>Destination Weddings ✈️</h4>
+                                <span>Cásate en el país que siempre has soñado.</span>
+                            </div>
+                            
+                            <div class="promo-box">
+                                <h4>Sorteo 5.000€ ✨</h4>
+                                <span>Participa en la edición del sorteo.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
@@ -76,12 +141,12 @@
 
         <div class="cards-grid">
             <article class="card">
-                <img src="img/centro1.jpg" alt="Centro de eventos">
+                <img src="public/img/icons/LOGO HACIENDA SIN FONDO NEGRO SOLO LETRAS.png" alt="Centro de eventos">
                 <div class="card-content">
-                    <h4>Ruta del Oro</h4>
-                    <p>Rengo, Chile</p>
+                    <h4>Hacienda Ruta del Oro</h4>
+                    <p>Hualqui, Chile</p>
                     <div class="rating">
-                        ★★★★☆
+                        ★★★★★
                     </div>
                     <a href="Centros/Rutadeloro/" class="btn primary">Ver Centro</a>
                 </div>
@@ -126,6 +191,7 @@
         <div class="section-title">
             <h3>Opiniones</h3>
         </div>
+        <!--
 
         <div class="reviews-grid">
             <div class="review-card">
@@ -138,6 +204,8 @@
                 <span>★★★★☆</span>
             </div>
         </div>
+
+        -->
     </section>
 
     <!-- FOOTER -->
