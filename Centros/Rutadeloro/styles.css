@@ -45,58 +45,199 @@ h3 { font-size: 1.2rem; }
 /* NAVBAR */
 .navbar ul {
   display: flex;
+  justify-content: center; /* Centrado */
+  align-items: center; /* Centrado vertical */
   list-style: none;
-  background: #f2c6cf;
   margin: 0;
   padding: 0;
-  justify-content: center;
+  background: #f2c6cf;
+  
+  /* AQUÍ damos la altura a la barra (lo "ancho" que querías) */
+  min-height: 90px; 
+  
+  /* AQUÍ separamos los elementos entre sí para que no estén pegados */
+  gap: 40px; 
 }
 
 .navbar a {
-  padding: 14px 18px;
   text-decoration: none;
-  color: #2b2b2b;
+  
+  /* COLOR Y TEXTO */
+  color: #4A4A4A; /* Gris oscuro elegante */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem; /* Un poco más grande para que se lea bien */
+  font-weight: 500; /* Un grosor medio, no muy negrita ni muy fina */
+  text-transform: uppercase; /* Mayúsculas se ven más premium */
+  letter-spacing: 1.5px; /* Espacio entre letras para que respire */
+  
+  transition: all 0.3s ease;
+  position: relative; /* Necesario para la línea dorada */
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.navbar a:hover {
+  color: #D4AF37; /* Dorado mate */
+}
+
+/* LÍNEA DORADA DEBAJO DEL TEXTO */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px; /* Separación de la línea respecto al texto */
+  left: 0;
+  background-color: #D4AF37;
+  transition: width 0.3s ease;
 }
 
 /* GALERÍA */
-#galeria {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
+/* SECCIÓN GALERÍA */
+.seccion-galeria {
+    padding: 80px 20px;
+    background: #fff; /* Fondo blanco para limpiar la vista */
+    text-align: center;
 }
 
-.slider {
-  overflow: hidden;
-  height: 420px;
+.galeria-slider {
+    padding: 20px 0 60px 0 !important; /* Espacio para que no se corten las sombras */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.slider-track {
-  display: flex;
-  transition: transform 0.4s ease;
+/* LA CAJA DE LA FOTO (SLIDE) */
+.galeria-slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 450px; /* ALTO FIJO: Esto hace que todas las cajas sean iguales */
 }
 
-.slider-track img {
-  width: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-right: 10px;
+/* LA IMAGEN EN SÍ */
+.galeria-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* EL TRUCO MAGICO: Recorta la imagen para llenar el espacio sin deformar */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* EFECTO HOVER (ZOOM SUAVE) */
+.galeria-slide:hover img {
+    transform: scale(1.1); /* La imagen crece un poquito al pasar el mouse */
+}
+
+/* ÍCONO DE LUPA (Aparece al pasar el mouse) */
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3); /* Capa oscura transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.3s ease;
+}
+
+.galeria-overlay i {
+    color: #fff;
+    font-size: 2rem;
+    background: rgba(212, 175, 55, 0.8); /* Fondo dorado */
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.galeria-slide:hover .galeria-overlay {
+    opacity: 1; /* Se hace visible al pasar el mouse */
+}
+
+/* RESPONSIVE: Ajustar altura en celulares */
+@media (max-width: 768px) {
+    .galeria-slide {
+        height: 350px; /* Un poco más bajas en celular */
+    }
 }
 
 /* COMENTARIOS */
-#comentarios {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px;
+/* SECCIÓN OPINIONES (Nuevo diseño) */
+.seccion-opiniones {
+    padding: 80px 20px;
+    background-color: #F9F7F2; /* Fondo Crema suave para destacar */
+    text-align: center;
 }
 
-.comentario-card {
-  max-width: 320px;
-  border: 1px solid #f1e3b8;
-  padding: 22px;
-  border-radius: 14px;
+.container-titulo {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.seccion-opiniones h2 {
+    font-size: 2.2rem;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+/* Estilos del Slider Swiper */
+.opiniones-slider {
+    padding: 30px 10px 60px 10px !important; /* Padding extra abajo para los puntitos de paginación */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* DISEÑO DE LA TARJETA DE OPINIÓN */
+.opinion-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra suave y elegante */
+    text-align: left;
+    height: 100%; /* Para que todas tengan la misma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 4px solid #D4AF37; /* Un detalle dorado arriba */
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: rgba(212, 175, 55, 0.3); /* Dorado muy clarito */
+    margin-bottom: 20px;
+}
+
+.opinion-texto {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    margin-bottom: 25px;
+}
+
+.autor-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    color: #2b2b2b;
+}
+
+.estrellas {
+    color: #D4AF37; /* Dorado */
+    letter-spacing: 2px;
+}
+
+/* PERSONALIZAR FLECHAS Y PUNTOS DE SWIPER */
+.swiper-button-next, .swiper-button-prev {
+    color: #D4AF37 !important; /* Flechas doradas */
+}
+
+.swiper-pagination-bullet-active {
+    background: #D4AF37 !important; /* Punto activo dorado */
 }
 
 /* RESPONSIVE */
@@ -283,3 +424,547 @@ h3 { font-size: 1.2rem; }
   margin-bottom: 8px;
 }
 
+/* SECCIÓN SERVICIOS */
+#servicios {
+    background-color: #F9F7F2; /* Fondo crema suave */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container-servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#servicios h2 {
+    font-size: 2.2rem;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #888;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* GRID DE TARJETAS */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* DISEÑO DE CADA TARJETA */
+.servicio-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2); /* Borde dorado muy sutil */
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.servicio-card:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #D4AF37;
+}
+
+/* ICONOS */
+.servicio-card i {
+    font-size: 2.5rem;
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 20px;
+}
+
+.servicio-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #2b2b2b;
+}
+
+.servicio-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SECCIÓN PROVEEDORES */
+#proveedores {
+    background-color: #FFFFFF; /* Fondo Blanco para separar secciones visualmente */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container-proveedores {
+    max-width: 1000px; /* Un poco más estrecho para que se vea compacto */
+    margin: 0 auto;
+}
+
+#proveedores h2 {
+    font-size: 2.2rem;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+.subtitulo-proveedores {
+    color: #888;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* GRID DE PROVEEDORES */
+.proveedores-grid {
+    display: grid;
+    /* Esto crea columnas automáticas que se ajustan al tamaño */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* TARJETA INDIVIDUAL */
+.proveedor-item {
+    background: #fff;
+    padding: 25px 15px;
+    border-radius: 15px;
+    /* Borde muy sutil gris */
+    border: 1px solid #eaeaea; 
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* EFECTO HOVER */
+.proveedor-item:hover {
+    border-color: #D4AF37; /* El borde se pone dorado */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15); /* Sombra dorada suave */
+}
+
+/* CÍRCULO DEL ICONO */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #F9F7F2; /* Fondo crema para el icono */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.proveedor-item:hover .icon-circle {
+    background-color: #D4AF37; /* El círculo se llena de dorado al pasar el mouse */
+}
+
+.proveedor-item i {
+    font-size: 1.5rem;
+    color: #D4AF37;
+    transition: color 0.3s ease;
+}
+
+.proveedor-item:hover i {
+    color: #fff; /* El icono cambia a blanco */
+}
+
+.proveedor-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+}
+
+
+/* =========================================
+   SECCIÓN CONTACTO (PARALLAX)
+   ========================================= */
+.contacto-parallax {
+    position: relative;
+    /* IMPORTANTE: Cambia esta ruta por una foto real tuya, idealmente oscura o de noche */
+    background: url("../Rutadeloro/imagenes/2.jpg") center / cover no-repeat fixed;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Capa oscura para que el texto se lea bien sobre la foto */
+.overlay-oscuro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.85); /* 85% de oscuridad */
+    z-index: 1;
+}
+
+.container-contacto {
+    position: relative;
+    z-index: 2; /* Para que el texto quede encima de la capa oscura */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Títulos */
+.contacto-header h2 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #F9F7F2; /* Crema claro */
+}
+
+.contacto-header p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+/* Grid de Tarjetas */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Diseño de cada tarjeta */
+.contacto-card {
+    background: rgba(255, 255, 255, 0.05); /* Efecto cristal muy sutil */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animación al pasar el mouse */
+.contacto-card:hover {
+    background: #fff; /* Se vuelve blanca */
+    transform: translateY(-10px); /* Sube un poco */
+}
+
+/* Iconos */
+.icon-box {
+    font-size: 2.5rem;
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contacto-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+/* Textos dentro de la tarjeta */
+.contacto-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.contacto-card p {
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+/* Flechita "Ver más" */
+.cta-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #D4AF37;
+    font-weight: 600;
+}
+
+/* CAMBIOS DE COLOR AL HOVER (Cuando la tarjeta se pone blanca) */
+.contacto-card:hover h3 { color: #2b2b2b; }
+.contacto-card:hover p { color: #555; }
+
+/* Destacar la tarjeta de WhatsApp */
+.contacto-card.destacado {
+    border-color: #D4AF37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* MAPA */
+.mapa-container {
+    margin-top: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.1);
+}
+
+.mapa-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #F9F7F2;
+    margin-bottom: 5px;
+}
+.mapa-container p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* FOOTER FINAL */
+footer {
+    background: #111; /* Negro casi puro */
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================
+   SECCIÓN BIENVENIDA (INFORMACIÓN)
+   ========================================= */
+.seccion-bienvenida {
+    padding: 100px 20px;
+    background-color: #fff;
+    overflow: hidden; /* Para que los decorativos no se salgan */
+}
+
+.container-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Para que baje en celular */
+}
+
+/* Columna de Texto */
+.texto-bienvenida {
+    flex: 1;
+    min-width: 300px;
+}
+
+.pre-titulo {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #D4AF37; /* Dorado */
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.texto-bienvenida h2 {
+    font-size: 3rem;
+    color: #2b2b2b;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.destacado {
+    font-size: 1.2rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+    border-left: 3px solid #D4AF37;
+    padding-left: 20px;
+}
+
+.texto-bienvenida p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.firma p {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-top: 30px;
+}
+
+/* Columna de Imagen */
+.imagen-bienvenida {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.imagen-bienvenida img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 20px 20px 0px #F9F7F2; /* Efecto de sombra sólida crema */
+    position: relative;
+    z-index: 2;
+}
+
+/* Cuadro dorado decorativo detrás de la foto */
+.cuadro-decorativo {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #D4AF37;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* =========================================
+   SECCIÓN ESPACIOS
+   ========================================= */
+.seccion-espacios {
+    padding: 80px 20px;
+    background-color: #F9F7F2; /* Fondo crema */
+}
+
+.container-espacios {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-centro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Banner de Capacidad (Destacado) */
+.capacidad-banner {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    border-left: 5px solid #D4AF37;
+}
+
+.capacidad-banner i {
+    font-size: 3rem;
+    color: #D4AF37;
+}
+
+.capacidad-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #2b2b2b;
+}
+
+.capacidad-info p {
+    margin: 0;
+    color: #666;
+}
+
+/* Grid de detalles de espacios */
+.espacios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.espacio-item {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.05); /* Borde muy sutil */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.espacio-item:hover {
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+    border-color: transparent;
+}
+
+.espacio-item i {
+    font-size: 2rem;
+    color: #888;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.espacio-item:hover i {
+    color: #D4AF37; /* Icono se pone dorado al pasar el mouse */
+}
+
+.espacio-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.espacio-item p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+    }
+    
+    .imagen-bienvenida {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .capacidad-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -18,6 +18,8 @@
 
     <!-- GLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -87,172 +89,378 @@
             </div>
         </div>
 
-        <a href="#servicios" class="ver-servicios-btn">
-            Ver todos los servicios
-        </a>
+        
     </section>
 
 
     <!-- INFORMACIÓN -->
-    <section id="informacion">
-        <h2>Información</h2>
-        <p>
-            Hacienda Ruta del Oro es un exclusivo espacio campestre que abre las puertas de sus instalaciones para que vivan una
-            celebración de boda muy especial y memorable para todos.
-            Podrán disfrutar de la grandeza de su natural entorno que de seguro aportará un toque inigualable a su gran día.
-        </p>
-    </section>
-
-    <section class="espacios">
-    <h2>Espacios y capacidades</h2>
-
-    <p class="espacios-resumen">
-        Dentro de las instalaciones destaca una hermosa carpa para bodas,
-        piso alfombrado y cortinaje blanco, con espacios disponibles de hasta
-        150 personas y posibilidad de extensión según requerimientos.
-    </p>
-
-    <ul class="espacios-lista">
-        <li>Salón</li>
-        <li>Pista de baile</li>
-        <li>Estacionamiento</li>
-    </ul>
-
-    <button class="leer-mas-btn">Leer más</button>
-
-    <!-- CONTENIDO OCULTO -->
-        <div class="espacios-extra">
-
-            <ul class="espacios-lista">
-                <li>2 barras para servicio de bar</li>
-                <li>Cocina equipada</li>
-                <li>Terraza</li>
-                <li>Jardín</li>
-                <li>Área para boda al aire libre</li>
-                <li>Bosque con árboles nativos para sesión de fotos</li>
-            </ul>
-
-            <h3>Servicios que ofrece</h3>
-
-            <p>
-                Además de un escenario inigualable para su boda, podrán disfrutar de
-                prestaciones de gran calidad con las que sorprender a sus invitados.
-                Como por ejemplo:
-            </p>
-
-            <ul class="servicios-lista">
-                <li>Banquete</li>
-                <li>Decoración</li>
-                <li>Bar abierto</li>
-                <li>Fotografía</li>
-                <li>Música</li>
-            </ul>
-
-            <h3>Ubicación</h3>
-
-            <p>
-                Esta acogedora parcela se encuentra en Concepción, en un hermoso entorno
-                donde les espera un equipo experto en eventos. No se arrepentirán.
-            </p>
-
+    <section id="informacion" class="seccion-bienvenida">
+        <div class="container-flex">
+            <div class="texto-bienvenida">
+                <span class="pre-titulo">Bienvenidos a</span>
+                <h2>Hacienda Ruta del Oro</h2>
+                <p class="destacado">
+                    Un exclusivo espacio campestre diseñado para crear recuerdos eternos.
+                </p>
+                <p>
+                    Abrimos las puertas de nuestras instalaciones para que vivan una celebración de boda única. 
+                    Disfruten de la grandeza de nuestro entorno natural, rodeados de bosques nativos y jardines 
+                    que aportarán ese toque inigualable y romántico a su gran día.
+                </p>
+                <div class="firma">
+                    <p>— El Equipo de Hacienda Ruta del Oro</p>
+                </div>
+            </div>
+            <div class="imagen-bienvenida">
+                <img src="imagenes/portada hacienda.jpeg" alt="Matrimonio en Hacienda Ruta del Oro">
+                <div class="cuadro-decorativo"></div>
+            </div>
         </div>
+    </section>
+    <!-- ESPACIOS -->
+    <section id="espacios" class="seccion-espacios">
+        <div class="container-espacios">
+            <div class="titulo-centro">
+                <h2>Espacios y Capacidades</h2>
+                <p class="subtitulo">Instalaciones pensadas para tu comodidad</p>
+            </div>
 
+            <div class="capacidad-banner">
+                <i class="fa-solid fa-users-rays"></i>
+                <div class="capacidad-info">
+                    <h3>Capacidad Flexible</h3>
+                    <p>Espacios disponibles de hasta <strong>150 personas</strong> (con posibilidad de extensión).</p>
+                </div>
+            </div>
+
+            <div class="espacios-grid">
+                
+                <div class="espacio-item">
+                    <i class="fa-solid fa-tents"></i>
+                    <h4>Carpa Elegante</h4>
+                    <p>Piso alfombrado y cortinaje blanco impecable.</p>
+                </div>
+
+                <div class="espacio-item">
+                    <i class="fa-solid fa-tree"></i>
+                    <h4>Bosque Nativo</h4>
+                    <p>El escenario perfecto para sesiones de fotos mágicas.</p>
+                </div>
+
+                <div class="espacio-item">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                    <h4>Salón y Pista</h4>
+                    <p>Amplio espacio para cena y pista de baile.</p>
+                </div>
+
+                <div class="espacio-item">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <h4>Terraza y Jardín</h4>
+                    <p>Ideal para el cóctel de bienvenida al aire libre.</p>
+                </div>
+
+                <div class="espacio-item">
+                    <i class="fa-solid fa-martini-glass-citrus"></i>
+                    <h4>Bar</h4>
+                    <p>2 barras equipadas para un servicio fluido.</p>
+                </div>
+
+                <div class="espacio-item">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <h4>Estacionamiento</h4>
+                    <p>Recinto privado y seguro para tus invitados.</p>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <br>
-    <br>
-    <br>
+
+    <section id="servicios">
+        <div class="container-servicios">
+            <h2>Nuestros Servicios</h2>
+            <p class="subtitulo">Todo lo que necesitas para una celebración perfecta</p>
+            
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Gastronomía</h3>
+                    <p>Banquetería incluida y cocina equipada para catering.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-tents"></i>
+                    <h3>Espacios</h3>
+                    <p>Jardín, terraza y carpa habilitada.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-church"></i>
+                    <h3>Ceremonia</h3>
+                    <p>Hermosa capilla en el lugar.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Exclusividad</h3>
+                    <p>Un evento por día. Horario hasta las 03:00 AM.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Ambientación</h3>
+                    <p>Decoración personalizable a tu gusto.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-camera"></i>
+                    <h3>Recuerdos</h3>
+                    <p>Cabina fotográfica, Plataforma 360 y Caja de cristal.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Detalles Únicos</h3>
+                    <p>Teléfono rojo de mensajes (Audio Guestbook).</p>
+                </div>
+
+                <div class="servicio-card">
+                    <i class="fa-solid fa-bed"></i>
+                    <h3>Alojamiento</h3>
+                    <p>Cabaña exclusiva para dos personas.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <i class="fa-solid fa-car"></i>
+                    <h3>Comodidad</h3>
+                    <p>Estacionamiento privado y seguro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <section id="proveedores">
+        <div class="container-proveedores">
+            <h2>Proveedores Externos</h2>
+            <p class="subtitulo-proveedores">Contamos con una red de confianza para complementar tu evento</p>
+
+            <div class="proveedores-grid">
+                
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3>Tortas de Novios</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-drum"></i>
+                    </div>
+                    <h3>Batucadas</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-masks-theater"></i>
+                    </div>
+                    <h3>Bailes y Shows</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3>Orquestas</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3>Autos Antiguos</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3>Fotógrafos</h3>
+                </div>
+
+                <div class="proveedor-item">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Decoradoras y Floristas</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
 
     <!-- GALERÍA -->
-    <section id="galeria">
-        <button class="btn prev" aria-label="Anterior">‹</button>
-
-        <div class="slider">
-            <div class="slider-track"></div>
+    <section id="galeria" class="seccion-galeria">
+        <div class="container-titulo">
+            <h2>Nuestra Galería</h2>
+            <p class="subtitulo">Rincones mágicos de la Hacienda</p>
         </div>
 
-        <button class="btn next" aria-label="Siguiente">›</button>
+        <div class="swiper galeria-slider">
+            <div class="swiper-wrapper" id="galeria-track">
+                </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
 
     <br><br><br>
     
     <!-- OPINIONES -->
-    <section id="comentarios">
-        <h2>Opiniones</h2>
-
-        <div class="comentario-card">
-            <h3>Damaris</h3>
-            <div class="estrellas">★★★★★</div>
-            <p>Excelente lugar</p>
-            <button>Ver más</button>
+    <section id="comentarios" class="seccion-opiniones">
+        <div class="container-titulo">
+            <h2>Lo que dicen nuestros novios</h2>
+            <p class="subtitulo">Historias reales de momentos inolvidables</p>
         </div>
 
-        <div class="comentario-card">  
-            <h3>Leslie</h3> 
-            <div class="estrellas">★★★★★</div> 
-            <p>Magnífico lugar...</p> 
-            <button>Ver más</button> 
-        </div> 
+        <div class="swiper opiniones-slider">
+            <div class="swiper-wrapper">
 
-        <div class="comentario-card"> 
-            <h3>Nathalie R.</h3> 
-            <div class="estrellas">★★★★★</div>
-             <p>Magnífico lugar...</p> 
-             <button>Ver más</button>
-        </div> 
+                <div class="swiper-slide">
+                    <div class="opinion-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="opinion-texto">"Excelente lugar, la atención fue maravillosa desde el primer día. Nuestros invitados quedaron encantados con el entorno."</p>
+                        <div class="autor-info">
+                            <h3>Damaris</h3>
+                            <div class="estrellas">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="comentario-card">       
-            <h3>Maca B.</h3> 
-            <div class="estrellas">★★★★★</div> 
-            <p>Magnífico lugar...</p> 
-            <button>Ver más</button> 
+                <div class="swiper-slide">
+                    <div class="opinion-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="opinion-texto">"Magnífico lugar... Realmente superó nuestras expectativas. La capilla es preciosa y la carpa muy elegante."</p>
+                        <div class="autor-info">
+                            <h3>Leslie</h3>
+                            <div class="estrellas">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="opinion-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="opinion-texto">"Todo salió perfecto. El equipo de la hacienda es muy profesional y nos ayudaron en cada detalle. ¡Gracias!"</p>
+                        <div class="autor-info">
+                            <h3>Nathalie R.</h3>
+                            <div class="estrellas">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="opinion-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="opinion-texto">"Un entorno soñado para casarse. Las fotos en el bosque quedaron increíbles. 100% recomendado."</p>
+                        <div class="autor-info">
+                            <h3>Maca B.</h3>
+                            <div class="estrellas">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-
-        <!-- Más tarjetas aquí -->
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: haciendarutadeloro@gmail.com</p>
-        <p>Instagram: @haciendarutadeloro</p>
-        <p>WhatsApp: +56 967255472</p>
+    <section id="contacto" class="contacto-parallax">
+        <div class="overlay-oscuro"></div>
+        
+        <div class="container-contacto">
+            <div class="contacto-header">
+                <h2>Hablemos de tu Gran Día</h2>
+                <p>Estamos listos para responder tus dudas y agendar una visita a la Hacienda.</p>
+            </div>
+
+            <div class="contacto-grid">
+                
+                <a href="https://wa.me/56967255472" target="_blank" class="contacto-card destacado">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>+56 9 6725 5472</p>
+                    <span class="cta-link">Enviar mensaje &rarr;</span>
+                </a>
+
+                <a href="mailto:haciendarutadeloro@gmail.com" class="contacto-card">
+                    <div class="icon-box">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>haciendarutadeloro@gmail.com</p>
+                    <span class="cta-link">Escribir correo &rarr;</span>
+                </a>
+
+                <a href="https://instagram.com/haciendarutadeloro" target="_blank" class="contacto-card">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@haciendarutadeloro</p>
+                    <span class="cta-link">Ver fotos &rarr;</span>
+                </a>
+            </div>
+
+            <div class="mapa-container">
+                <h3>Nuestra Ubicación</h3>
+                <p>Lo Vargas Nº 18, Hualqui, Región del Biobío</p>
+                
+                <iframe 
+                    title="Mapa Hacienda Ruta del Oro"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.356372674404!2d-72.91180792358947!3d-36.97974867219503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669bb4c7944046b%3A0x3fd2fcd54e2709e6!2sHacienda%20Ruta%20del%20Oro!5e0!3m2!1ses!2scl!4v1705799999999!5m2!1ses!2scl" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Hacienda Ruta del Oro</p>
+        <div class="footer-content">
+            <p class="copyright">© 2026 Hacienda Ruta del Oro. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
     </footer>
 
    
 
-    <!-- MODAL SERVICIOS -->
-    <div id="modal-servicios" class="modal">
-    <div class="modal-content">
-        <button class="modal-close" aria-label="Cerrar">&times;</button>
-
-        <h2>Servicios</h2>
-
-        <ul class="servicios-lista">
-        <li>Banquetería incluida</li>
-        <li>Un evento por día</li>
-        <li>Capilla</li>
-        <li>Jardín, terraza y carpa</li>
-        <li>Cocina equipada para catering</li>
-        <li>Estacionamiento privado</li>
-        <li>Horario hasta las 03:00</li>
-        <li>Decoración personalizable</li>
-        <li>Cabaña para dos personas</li>
-        <li>Cabina fotográfica</li>
-        <li>Plataforma 360</li>
-        <li>Caja de cristal</li>
-        <li>telefono rojo de mensajes para invitados</li>
-        </ul>
-    </div>
-    </div>
+   
+    
 
      <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 
 </body>

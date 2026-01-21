@@ -15,81 +15,115 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("data/galeria.json")
     .then(res => res.json())
     .then(data => {
+        const track = document.getElementById("galeria-track");
 
-      // Crear imágenes dinámicamente
-      data.rutadeloro.forEach(name => {
-        const link = document.createElement("a");
-        link.href = `imagenes/${name}`;
-        link.className = "glightbox";
+        // 2. Crear los elementos HTML para cada foto
+        data.rutadeloro.forEach(name => {
+            
+            // Div principal del slide (requerido por Swiper)
+            const slideDiv = document.createElement("div");
+            slideDiv.className = "swiper-slide";
 
-        const img = document.createElement("img");
-        img.src = `imagenes/${name}`;
-        img.alt = "Galería";
+            // Estructura interna: Link (Lightbox) -> Div contenedor -> Imagen + Overlay
+            slideDiv.innerHTML = `
+                <a href="imagenes/${name}" class="glightbox galeria-slide">
+                    <img src="imagenes/${name}" alt="Galería Hacienda Ruta del Oro">
+                    <div class="galeria-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </a>
+            `;
 
-        link.appendChild(img);
-        track.appendChild(link);
-      });
+            track.appendChild(slideDiv);
+        });
 
-      const images = document.querySelectorAll(".slider-track img");
+        // 3. Inicializar GLightbox (Para que se abran en grande al hacer clic)
+        const lightbox = GLightbox({
+            selector: ".glightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
 
-      // Botón siguiente
-      nextBtn.addEventListener("click", () => {
-        if (index < images.length - 1) {
-          index++;
-          track.style.transform = `translateX(${-imageWidth * index}px)`;
-        }
-      });
+        // 4. Inicializar Swiper de Galería (Carrusel)
+        new Swiper('.galeria-slider', {
+            loop: true,
+            slidesPerView: 1, // En celular se ve 1
+            spaceBetween: 20,
+            centeredSlides: true, // La foto activa va al centro
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2, // Tablet pequeña
+                    centeredSlides: false,
+                },
+                1024: {
+                    slidesPerView: 3, // PC normal
+                    centeredSlides: false,
+                },
+                1400: {
+                    slidesPerView: 4, // Pantallas muy anchas
+                    centeredSlides: false,
+                }
+            }
+        });
+    })
+    .catch(error => console.error("Error cargando la galería:", error));
 
-      // Botón anterior
-      prevBtn.addEventListener("click", () => {
-        if (index > 0) {
-          index--;
-          track.style.transform = `translateX(${-imageWidth * index}px)`;
-        }
-      });
+  // =========================================
+  // INICIALIZAR SLIDER DE OPINIONES (Swiper)
+  // =========================================
+  const swiperOpiniones = new Swiper('.opiniones-slider', {
+      // Opciones básicas
+      loop: true, // Permite que gire infinitamente
+      spaceBetween: 30, // Espacio entre tarjetas
+      grabCursor: true, // Manito al pasar el mouse
+      autoplay: {
+          delay: 5000, // Se mueve solo cada 5 segundos (opcional)
+          disableOnInteraction: false,
+      },
 
-      // Inicializar Lightbox
-      GLightbox({
-        selector: ".glightbox",
-        loop: true
-      });
-    });
+      // Paginación (los puntitos)
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
 
-  const leerMasBtn = document.querySelector(".leer-mas-btn");
-  const espaciosExtra = document.querySelector(".espacios-extra");
+      // Flechas de navegación
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
 
-  leerMasBtn.addEventListener("click", () => {
-    const visible = espaciosExtra.style.display === "block";
-
-    espaciosExtra.style.display = visible ? "none" : "block";
-    leerMasBtn.textContent = visible ? "Leer más" : "Leer menos";
+      // RESPONSIVE BREAKPOINTS (Lo más importante)
+      breakpoints: {
+          // Cuando la pantalla es >= 320px (Celulares)
+          320: {
+              slidesPerView: 1,
+          },
+          // Cuando la pantalla es >= 768px (Tablets)
+          768: {
+              slidesPerView: 2,
+          },
+          // Cuando la pantalla es >= 1024px (Escritorio)
+          1024: {
+              slidesPerView: 3,
+          }
+      }
   });
 
 
 });
 
 
-const modal = document.getElementById("modal-servicios");
-const openBtn = document.querySelector(".ver-servicios-btn");
-const closeBtn = document.querySelector(".modal-close");
-
-// Abrir modal
-openBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
-});
-
-// Cerrar modal
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-  document.body.style.overflow = "";
-});
-
-// Cerrar al hacer clic fuera
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
-});
