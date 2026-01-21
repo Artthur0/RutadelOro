@@ -126,4 +126,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// =========================================
+// MENÚ MÓVIL (HAMBURGUESA)
+// =========================================
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        // Alternar clase 'active' para abrir/cerrar
+        navMenu.classList.toggle('active');
+        
+        // Cambiar el icono de hamburguesa a X (opcional, visualmente bonito)
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Cerrar el menú automáticamente al hacer clic en un enlace
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
 

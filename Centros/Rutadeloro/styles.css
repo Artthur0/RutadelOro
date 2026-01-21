@@ -968,3 +968,136 @@ footer {
         text-align: center;
     }
 }
+
+/* =========================================
+   ESTILOS SOLO PARA MÓVIL (RESPONSIVE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* 1. NAVBAR MÓVIL (Hamburguesa) */
+    header {
+        padding: 15px 20px; /* Barra más delgada */
+        background: #F9F7F2; /* Fondo sólido crema */
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar ul {
+        min-height: auto;
+        gap: 0;
+    }
+
+    /* Logo texto en móvil */
+    .logo-movil {
+        display: block !important;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        color: #D4AF37;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* Botón Hamburguesa */
+    .menu-toggle {
+        display: block !important;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #4A4A4A;
+    }
+
+    /* El menú oculto por defecto */
+    .nav-menu {
+        position: absolute;
+        top: 100%; /* Justo debajo de la barra */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        
+        /* Animación de apertura */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    /* Clase para abrir el menú */
+    .nav-menu.active {
+        max-height: 500px; /* Altura suficiente para mostrar todo */
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        font-size: 1rem;
+        border-bottom: 1px solid #f0f0f0; /* Línea separadora sutil */
+    }
+    
+    .nav-menu a:hover {
+        background: #F9F7F2;
+    }
+
+    /* 2. TIPOGRAFÍA MÁS AMIGABLE */
+    h1 { font-size: 2rem; } /* Título Hero más chico */
+    h2 { font-size: 1.8rem; }
+    p { font-size: 0.95rem; }
+
+    /* 3. HERO (PORTADA) */
+    .hero {
+        height: 100vh; /* Pantalla completa real */
+        background-position: center center;
+    }
+    
+    .hero-content {
+        margin: 0 20px;
+        padding: 30px 20px;
+        width: 100%;
+    }
+
+    /* 4. AJUSTE DE GRILLAS (TARJETAS) */
+    /* Forzamos que las tarjetas ocupen el ancho disponible y no se salgan */
+    .servicios-grid, 
+    .proveedores-grid, 
+    .espacios-grid, 
+    .datos-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        padding: 0 10px; /* Un poco de aire a los lados */
+    }
+
+    .servicio-card, .proveedor-item {
+        margin-bottom: 10px;
+    }
+
+    /* 5. ARREGLO PARALLAX (Contacto) */
+    /* En celulares, 'fixed' suele fallar. Lo cambiamos a 'scroll' */
+    .contacto-parallax {
+        background-attachment: scroll;
+        padding: 60px 15px;
+    }
+    
+    .contacto-header h2 {
+        font-size: 2rem;
+    }
+    
+    /* Mapa ajustado */
+    iframe {
+        height: 300px; /* Mapa un poco más bajo para no ocupar todo el scroll */
+    }
+}
+
+/* ESTILOS BASE QUE FALTABAN PARA DESKTOP (Para que lo de arriba funcione) */
+.logo-movil, .menu-toggle {
+    display: none; /* Ocultos en PC */
+}
