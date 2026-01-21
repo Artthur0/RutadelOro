@@ -1,12 +1,30 @@
 /* RESET GENERAL */
-html, body {
+/* =========================================
+   RESET GENERAL Y AJUSTES GLOBALES
+   ========================================= */
+* {
+  box-sizing: border-box; /* VITAL: El padding no aumenta el ancho total */
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* ELIMINA EL VACÍO BLANCO: Corta lo que se salga a la derecha */
+  position: relative; /* Mantiene la estructura sólida */
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   color: #2b2b2b;
+  background-color: #fff;
+}
+
+/* Imágenes responsivas por defecto */
+img {
+  max-width: 100%; /* Ninguna imagen puede ser más ancha que su contenedor */
+  height: auto;
+  display: block;
 }
 
 /* TIPOGRAFÍA */
@@ -1061,9 +1079,12 @@ footer {
     }
     
     .hero-content {
-        margin: 0 20px;
-        padding: 30px 20px;
-        width: 100%;
+        margin-left: 0; /* Quitamos el margen de PC */
+        margin-right: 0;
+        width: 100%;    /* Ocupa todo el ancho */
+        padding: 40px 20px; /* Relleno interno seguro */
+        border-radius: 0; /* En móvil se ve mejor sin bordes redondeados si ocupa todo */
+        background: rgba(0,0,0,0.6); /* Un poco más oscuro para leer mejor */
     }
 
     /* 4. AJUSTE DE GRILLAS (TARJETAS) */
@@ -1071,13 +1092,19 @@ footer {
     .servicios-grid, 
     .proveedores-grid, 
     .espacios-grid, 
-    .datos-grid {
-        grid-template-columns: 1fr; /* Una sola columna */
-        padding: 0 10px; /* Un poco de aire a los lados */
+    .datos-grid,
+    .contacto-grid {
+        grid-template-columns: 1fr; /* Una sola columna estricta */
+        width: 100%;
+        padding: 0; /* Quitamos padding lateral del grid para usar el del contenedor */
     }
 
-    .servicio-card, .proveedor-item {
-        margin-bottom: 10px;
+    .servicio-card, 
+    .proveedor-item, 
+    .dato-item, 
+    .espacio-item {
+        min-width: 0; /* Permite que la tarjeta se encoja si es necesario */
+        width: 100%;
     }
 
     /* 5. ARREGLO PARALLAX (Contacto) */
@@ -1094,6 +1121,17 @@ footer {
     /* Mapa ajustado */
     iframe {
         height: 300px; /* Mapa un poco más bajo para no ocupar todo el scroll */
+    }
+
+    .container-servicios, 
+    .container-proveedores, 
+    .container-espacios, 
+    .container-flex, 
+    .container-contacto {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px; /* Margen de seguridad a los lados */
+        overflow: hidden; /* Doble seguridad */
     }
 }
 
