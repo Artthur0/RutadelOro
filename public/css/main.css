@@ -1,25 +1,26 @@
 /* =====================
-   VARIABLES GLOBALES (PALETA DUSTY ROSE & AGED GOLD)
+    VARIABLES GLOBALES (PALETA WEDDING GOLD & ROSE)
 ===================== */
 :root {
-    /* Paleta Definida */
-    --bg-body: #F4EBE8;      /* Gris Rosado Pálido (Fondo base) */
-    --primary: #B5838D;      /* Rosa Viejo (Acciones principales, Botones) */
-    --accent: #B08968;       /* Dorado Envejecido (Iconos, Detalles, Estrellas) */
-    --text-main: #353535;    /* Gris Carbón Suave (Texto principal) */
+    /* Paleta de Colores Solicitada */
+    --dorado: #D4AF37;          /* Dorado Principal */
+    --champagne: #E6BE8A;       /* Champagne dorado */
+    --rosa-empolvado: #D8A7B1;  /* Rosa empolvado */
+    --rosa-suave: #F3D1D8;      /* Rosa suave */
+    --crema: #FFF3E2;           /* Crema cálida (Fondo base) */
     
     /* Auxiliares */
-    --text-light: #6e6e6e;   /* Gris medio para descripciones */
-    --white: #ffffff;        /* Blanco (Necesario para que las tarjetas resalten) */
-    --bg-soft: #EDE4E1;      /* Una variación un poco más oscura del fondo para contrastes */
+    --white: #ffffff;
+    --text-main: #353535;       
+    --text-light: #6e6e6e;
     
     /* Configuración */
-    --radius: 12px;          /* Bordes redondeados y suaves */
-    --shadow: 0 12px 24px rgba(53, 53, 53, 0.08); /* Sombra suave en tono carbón */
+    --radius: 12px;
+    --shadow: 0 12px 24px rgba(212, 175, 55, 0.1); 
 }
 
 /* =====================
-   RESET BÁSICO
+    RESET BÁSICO
 ===================== */
 * {
     margin: 0;
@@ -29,17 +30,17 @@
 
 body {
     font-family: "Segoe UI", system-ui, sans-serif;
-    background-color: var(--bg-body); /* Fondo Gris Rosado */
-    color: var(--text-main);          /* Texto Carbón */
+    background-color: var(--crema); 
+    color: var(--text-main);
     line-height: 1.6;
 }
 
 /* =====================
-   NAVBAR
+    NAVBAR
 ===================== */
 .navbar {
-    background-color: var(--bg-body); /* Se funde con el fondo */
-    border-bottom: 1px solid rgba(176, 137, 104, 0.2); /* Línea sutil en dorado */
+    background-color: var(--crema);
+    border-bottom: 1px solid var(--champagne);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -54,12 +55,25 @@ body {
     align-items: center;
 }
 
-.logo {
+/* Contenedor del Logo (Texto + Imagen) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Para integrar el fondo blanco si lo tiene */
+}
+
+.logo-text {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary); /* Logo en Rosa Viejo */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--dorado);
 }
 
 .nav-links a {
@@ -71,19 +85,14 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: var(--rosa-empolvado);
 }
 
 /* =====================
-   HERO
+    HERO
 ===================== */
 .hero {
-    /* Degradado sutil del fondo base hacia blanco */
-    background: linear-gradient(
-        180deg,
-        var(--bg-body) 0%,
-        var(--white) 100%
-    );
+    background: linear-gradient(180deg, var(--crema) 0%, var(--white) 100%);
     padding: 5rem 1.5rem;
     text-align: center;
 }
@@ -92,23 +101,18 @@ body {
     font-size: 2.6rem;
     margin-bottom: 1rem;
     color: var(--text-main);
-    font-weight: 400; /* Letra fina para elegancia */
+    font-weight: 400;
 }
 
 .hero p {
     max-width: 600px;
     margin: auto;
     color: var(--text-light);
-    font-size: 1.1rem;
-}
-
-.hero-buttons {
-    margin-top: 2.5rem;
 }
 
 .btn {
     padding: 0.8rem 1.8rem;
-    border-radius: 30px; /* Botones muy redondeados (Pill shape) */
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     margin: 0 0.5rem;
@@ -117,29 +121,24 @@ body {
 }
 
 .btn.primary {
-    background-color: var(--primary); /* Rosa Viejo */
+    background-color: var(--rosa-empolvado);
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(181, 131, 141, 0.4); /* Sombra rosada */
+    box-shadow: 0 4px 15px rgba(216, 167, 177, 0.4);
 }
 
 .btn.secondary {
-    border: 1px solid var(--accent); /* Borde Dorado Envejecido */
-    color: var(--accent);
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
     background-color: transparent;
 }
 
 .btn.secondary:hover {
-    background-color: var(--accent);
+    background-color: var(--dorado);
     color: var(--white);
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    opacity: 0.95;
-}
-
 /* =====================
-   SECCIONES
+    SECCIONES GENERALES
 ===================== */
 section {
     padding: 4.5rem 1.5rem;
@@ -152,23 +151,21 @@ section {
 
 .section-title h3 {
     font-size: 2rem;
-    color: var(--primary); /* Títulos en Rosa Viejo */
+    color: var(--dorado);
     font-weight: 400;
-    letter-spacing: 1px;
 }
 
-/* Decoración bajo el título */
 .section-title h3::after {
     content: "";
     display: block;
     width: 60px;
     height: 1px;
-    background-color: var(--accent); /* Línea dorada fina */
+    background-color: var(--champagne);
     margin: 15px auto 0;
 }
 
 /* =====================
-   FEATURES (Servicios)
+    FEATURES (¿Qué ofrecemos?)
 ===================== */
 .features {
     background-color: var(--white);
@@ -182,7 +179,7 @@ section {
 }
 
 .feature-card {
-    background-color: var(--bg-body); /* Tarjeta Gris Rosado */
+    background-color: var(--crema);
     padding: 2.5rem;
     border-radius: var(--radius);
     text-align: center;
@@ -191,31 +188,21 @@ section {
 }
 
 .feature-card:hover {
-    border-color: var(--accent); /* Borde dorado al pasar el mouse */
+    border-color: var(--dorado);
     transform: translateY(-5px);
 }
 
 .feature-card i {
     font-size: 2rem;
-    color: var(--accent); /* Iconos Dorado Envejecido */
+    color: var(--dorado);
     margin-bottom: 1.2rem;
 }
 
-.feature-card h4 {
-    color: var(--text-main);
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
-}
-
-.feature-card p {
-    color: var(--text-light);
-}
-
 /* =====================
-   CARDS GRID (Centros)
+    CARDS GRID (Centros y Proveedores)
 ===================== */
 .cards-section {
-    background-color: var(--bg-body);
+    background-color: var(--crema);
 }
 
 .cards-grid {
@@ -231,24 +218,13 @@ section {
     box-shadow: var(--shadow);
     overflow: hidden;
     text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(53, 53, 53, 0.12);
+    transition: all 0.3s ease;
 }
 
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    filter: sepia(10%); /* Filtro sutil para dar calidez a las fotos */
-    transition: filter 0.3s;
-}
-
-.card:hover img {
-    filter: sepia(0%); /* Quita el filtro al hacer hover */
 }
 
 .card-content {
@@ -257,121 +233,46 @@ section {
 
 .card-content h4 {
     font-size: 1.3rem;
-    font-weight: 600;
+    color: var(--dorado);
     margin-bottom: 0.4rem;
-    color: var(--primary); /* Título Rosa Viejo */
-}
-
-.card-content p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
 }
 
 .rating {
-    color: var(--accent); /* Estrellas Doradas */
+    color: var(--dorado);
     margin-bottom: 1.2rem;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
 }
 
-.card .btn {
-    width: 100%;
-    margin: 0;
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    box-shadow: none;
-    font-size: 0.9rem;
+/* Etiquetas de categoría para proveedores */
+.category-tag {
+    display: inline-block;
+    background-color: var(--crema);
+    color: var(--dorado);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border: 1px solid var(--champagne);
 }
 
-.card .btn:hover {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-/* Placeholder */
-.card.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255,255,255,0.4);
-    border: 1px dashed var(--accent);
-    box-shadow: none;
-    min-height: 300px;
-}
-
-.card.placeholder p {
-    color: var(--accent);
-    font-style: italic;
+.btn.small {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    background-color: var(--rosa-empolvado);
+    color: white;
 }
 
 /* =====================
-   PROVEEDORES (Sección Alterna)
+    PROVEEDORES (Sección Alterna)
 ===================== */
 .cards-section.alt {
-    background-color: var(--bg-soft); /* Fondo un poco más oscuro */
+    background-color: var(--rosa-suave);
 }
 
 /* =====================
-   RESEÑAS
-===================== */
-.reviews {
-    background-color: var(--white);
-}
-
-.reviews-grid {
-    display: grid;
-    gap: 2rem;
-    max-width: 900px;
-    margin: auto;
-}
-
-.review-card {
-    background-color: var(--bg-body);
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    text-align: center;
-    position: relative;
-}
-
-/* Comillas grandes decorativas */
-.review-card::before {
-    content: "“";
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    font-size: 5rem;
-    color: var(--white);
-    font-family: serif;
-    line-height: 1;
-}
-
-.review-card p {
-    font-style: italic;
-    color: var(--text-main);
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
-}
-
-.review-card span {
-    color: var(--accent); /* Estrellas */
-}
-
-/* =====================
-   FOOTER
-===================== */
-.footer {
-    background-color: var(--text-main); /* Gris Carbón */
-    color: var(--bg-body); /* Texto claro */
-    text-align: center;
-    padding: 2.5rem;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-}
-
-/* =====================
-   MEGA MENÚ / DROPDOWN
+    MEGA MENÚ / DROPDOWN (CORREGIDO)
 ===================== */
 .dropdown {
     position: relative;
@@ -380,167 +281,194 @@ section {
 }
 
 .dropdown .dropbtn {
-    margin-left: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 6px;
     color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.dropdown .dropbtn:hover {
-    color: var(--primary);
-}
-
+/* EL CONTENEDOR BLANCO */
 .dropdown-content {
-    display: none;
+    display: none; /* Se activa con el hover */
     position: absolute;
     background-color: var(--white);
-    min-width: 650px;
+    min-width: 750px; /* Ancho suficiente para que nada se amontone */
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    padding: 2.5rem;
+    padding: 2rem;
     z-index: 1000;
     top: 100%;
-    left: -80px;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    border-top: 4px solid var(--accent); /* Borde superior Dorado */
+    left: -200px; /* Ajusta este valor para centrar el cuadro bajo el botón */
+    
+    /* ESTO ES LO QUE FALTA: La rejilla de 3 columnas */
+    grid-template-columns: 1fr 1.2fr 1.5fr; 
+    gap: 2.5rem;
+    border-top: 4px solid var(--dorado);
 }
 
+/* ACTIVACIÓN */
 .dropdown:hover .dropdown-content {
-    display: grid;
+    display: grid; /* Cambia a grid al pasar el mouse */
     animation: fadeUp 0.3s ease;
 }
 
-.dropdown:hover .dropbtn i {
-    transform: rotate(180deg);
-}
-
+/* Estilos para las columnas dentro del menú */
 .dropdown-content h4 {
-    color: var(--primary);
+    color: var(--dorado); /* O var(--rosa-empolvado) si prefieres */
     margin-bottom: 1.2rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-bottom: 1px solid var(--crema);
+    padding-bottom: 8px;
 }
 
 .dropdown-content a {
     color: var(--text-light);
     padding: 8px 0;
     text-decoration: none;
-    display: block;
-    border-bottom: 1px solid transparent;
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+    gap: 10px;
     transition: all 0.2s;
 }
 
-.dropdown-content a:hover {
-    color: var(--text-main);
-    padding-left: 5px;
-    border-bottom: 1px solid var(--bg-body);
+.dropdown-content a i {
+    color: var(--dorado);
+    width: 20px;
+    text-align: center;
 }
 
-/* Iconos del menú */
+.dropdown-content a:hover {
+    color: var(--rosa-empolvado);
+    padding-left: 5px;
+    background-color: transparent;
+}
+
+/* Iconos de las categorías */
 .link-with-icon i {
-    color: var(--accent); /* Iconos dorados */
+    color: var(--dorado);
     width: 25px;
     text-align: center;
 }
 
-.link-with-icon:hover i {
-    color: var(--primary);
+/* Caja de promociones (Derecha) */
+.promo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Promo Boxes */
 .promo-box {
-    background-color: var(--bg-body);
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
+    background-color: var(--crema);
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--champagne);
+    text-align: left;
 }
 
 .promo-box h4 {
-    color: var(--text-main);
+    border: none;
+    margin-bottom: 5px;
     text-transform: none;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    color: var(--dorado);
+    font-weight: bold;
 }
 
-.sub-category {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--bg-soft);
-}
-
-.sub-category h5 {
-    color: var(--accent);
-    font-size: 0.8rem;
-    text-transform: uppercase;
+.promo-box span {
+    font-size: 0.85rem;
+    color: var(--text-main);
 }
 
 /* =====================
-   RESPONSIVE
+    FOOTER
+===================== */
+.footer {
+    background-color: var(--text-main);
+    color: var(--crema);
+    text-align: center;
+    padding: 2.5rem;
+}
+
+/* =====================
+    RESPONSIVE
 ===================== */
 @media (min-width: 768px) {
-    .features-grid,
-    .cards-grid,
-    .reviews-grid {
+    .features-grid, .cards-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* MÓVIL */
-.menu-toggle {
-    display: none; 
-    font-size: 1.6rem;
-    color: var(--primary);
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--bg-body);
-        flex-direction: column;
-        text-align: center;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        padding: 1rem 0;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .nav-links a {
-        padding: 1rem;
-        margin: 0;
-    }
-    
-    .dropdown {
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
-
-    .dropdown-content {
-        position: relative;
-        display: none;
-        box-shadow: none;
-        min-width: 100%;
-        padding: 1rem;
-        background-color: var(--white);
-        left: 0;
-        border-top: none;
-    }
-    
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-}
-
-/* Animaciones */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   SECCIÓN ÚNETE A NOSOTROS 
+===================== */
+.join-us {
+    background-color: var(--rosa-suave); /* Fondo rosa suave para diferenciarlo */
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--champagne);
+    border-bottom: 1px solid var(--champagne);
+}
+
+.join-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.join-content h2 {
+    color: var(--dorado);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+}
+
+.join-content p {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.btn-join {
+    background-color: var(--rosa-empolvado);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(216, 167, 177, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que el botón se rompa en dos líneas */
+}
+
+.btn-join:hover {
+    background-color: var(--dorado);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .join-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .join-content p {
+        margin: auto;
+    }
 }
