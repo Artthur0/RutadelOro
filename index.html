@@ -10,6 +10,8 @@
 
     <!-- Iconos (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body>
 
@@ -17,7 +19,7 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="/" class="logo-container">
-                <img src="public/img/Logo_central.png" alt="Bodas y Centros" class="logo-img">
+                <img src="public/img/icons/Logo_central.png" alt="Bodas y Centros" class="logo-img">
             <span class="logo-text">Bodas y Centros</span>
             </a>
 
@@ -102,6 +104,23 @@
         </div>
     </section>
 
+    <!-- GALERIA -->
+    <section id="galeria" class="seccion-galeria">
+        <div class="container-titulo">
+            <h2>Inspiración Real</h2>
+            <p class="subtitulo">Momentos únicos capturados en nuestros centros</p>
+        </div>
+
+        <div class="swiper galeria-slider">
+            <div class="swiper-wrapper" id="galeria-track">
+                </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
     <!-- ¿QUÉ ES LA PLATAFORMA? -->
     <section class="features">
         <div class="section-title">
@@ -128,6 +147,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- CENTROS DESTACADOS -->
     <section id="centros" class="cards-section">
@@ -281,6 +301,7 @@
         -->
     </section>
 
+    <!-- LINK-UNETE -->
     <section class="join-us">
         <div class="join-container">
             <div class="join-content">
@@ -301,6 +322,8 @@
     </footer>
 
     <!-- JS global -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="public/js/main.js"></script>
 </body>
 </html>
