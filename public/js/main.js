@@ -16,45 +16,33 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById("galeria-track");
 
-    // Cargamos las fotos generales
     fetch("public/data/galeria_general.json")
         .then(res => res.json())
         .then(data => {
+            // CAMBIO 1: Usamos forEach para cargar TODAS las fotos, no solo la [0]
             data.fotos.forEach(fileName => {
                 const slideDiv = document.createElement("div");
                 slideDiv.className = "swiper-slide";
 
-                // Ajustamos la ruta a donde tengas tus fotos generales
                 slideDiv.innerHTML = `
-                    <a href="public/img/Fotos/${fileName}" class="glightbox galeria-slide">
-                        <img src="public/img/Fotos/${fileName}" alt="Inspiración Bodas">
-                        <div class="galeria-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </a>
+                    <div class="galeria-slide">
+                        <img src="public/img/Fotos/${fileName}" alt="Inspiración">
+                    </div>
                 `;
                 track.appendChild(slideDiv);
             });
 
-            // Inicializar GLightbox
-            GLightbox({ selector: ".glightbox" });
-
-            // Inicializar Swiper
+            // CAMBIO 2: Habilitar el movimiento en Swiper
             new Swiper('.galeria-slider', {
-                loop: true,
                 slidesPerView: 1,
-                spaceBetween: 20,
-                autoplay: { delay: 3000 },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                centeredSlides: true,
+                loop: true,            // Permite que sea infinito
+                autoplay: {            // Para que se mueva solo
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                    1400: { slidesPerView: 4 }
-                }
+                allowTouchMove: true,  // HABILITA el arrastre con el mouse
+                noSwiping: false       // HABILITA el swipe
             });
         });
 });
