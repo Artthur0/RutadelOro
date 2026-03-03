@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bodas y Eventos</title>
 
-    <!-- CSS global -->
     <link rel="stylesheet" href="public/css/main.css">
 
-    <!-- Iconos (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    
     <header class="navbar">
         <div class="nav-container">
             <a href="/" class="logo-container">
@@ -24,8 +22,8 @@
             </a>
 
             <nav class="nav-links">
-                <div class="dropdown"> <!-- Centros de eventos -->
-                    <a href="#centros" class="dropbtn">
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">
                         Lugares para Boda y Eventos <i class="fa-solid fa-chevron-down"></i>
                     </a>
                     
@@ -46,8 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="dropdown"> <!-- Proveedores -->  
-                    <a href="#proveedores" class="dropbtn">
+                <div class="dropdown"> 
+                    <a href="#" class="dropbtn">
                         Proveedores <i class="fa-solid fa-chevron-down"></i>
                     </a>
 
@@ -55,21 +53,21 @@
                         
                         <div class="column">
                             <h4>Empieza a contratar</h4>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-camera"></i> Fotógrafos</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-video"></i> Vídeo</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-utensils"></i> Catering</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-leaf"></i> Floristerías</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-plane"></i> Viaje de novios</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-camera"></i> Fotógrafos</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-video"></i> Vídeo</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-utensils"></i> Catering</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-leaf"></i> Floristerías</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-plane"></i> Viaje de novios</a>
                         </div>
 
                         <div class="column">
                             <h4 style="visibility: hidden;">.</h4> 
                             
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-music"></i> Música</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-car"></i> Coches de boda</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-bus"></i> Autobuses</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-envelope"></i> Invitaciones</a>
-                            <a href="#" class="link-with-icon"><i class="fa-solid fa-gift"></i> Detalles</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-music"></i> Música</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-car"></i> Coches de boda</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-bus"></i> Autobuses</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-envelope"></i> Invitaciones</a>
+                            <a href="#proveedores" class="link-with-icon"><i class="fa-solid fa-gift"></i> Detalles</a>
 
                             <div class="sub-category">
                                 <h5>Otras Categorías</h5>
@@ -84,7 +82,24 @@
                         
                     </div>
                 </div>
-                <a href="#contacto">Contacto</a>
+                <div class="dropdown">
+                    
+                    <a href="#contacto" class="dropbtn">Contacto</a>
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <h4>Numeros de contacto</h4>
+                            <p>+5697265472
+                               +56957709211
+                            </p>
+
+                        </div>
+                        <div class="column">
+                            <h4>Correo de contacto</h4>
+                            <p>BodasyEventos@haciendarutadeloro.cl</p>
+                        </div>
+                    </div>    
+                </div>
+                
             </nav>
         </div>
     </header>
@@ -94,34 +109,34 @@
     <section class="seccion-hero">
         <img src="public/img/Fotos/1.jpeg" alt="Imagen de fondo" class="imagen-fondo">
         <div class="contenedor-texto">
-            <h2>Todo para tus eventos en un solo lugar</h2>
+            <h2>Haz realidad el evento de tus sueños.</h2>
+            <p>Todo lo que necesitas para tu gran día en Concepción y alrededores.</p>
             
         </div>
         
     </section>
-    
-    <!-- HERO 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Todo para tus eventos en un solo lugar</h2>
-            <p>Bienvenidos a nuestra página, donde encontrarán todo lo que necesitan para el día más especial.
-                Somos expertos en la organización de bodas y eventos en Concepción y sus alrededores, trabajando con los mejores proveedores de la zona. 
-                En nuestra web, descubrirán desde exclusivos centros de eventos hasta todos los servicios indispensables para hacer realidad la boda de sus sueños. 
-                Exploren, inspírense y comiencen a planear con nosotros.
-            </p>
 
-            <div class="hero-buttons">
-                <a href="#centros" class="btn primary">Ver Centros</a>
-                <a href="#proveedores" class="btn secondary">Ver Proveedores</a>
-            </div> 
+    <section id="Nuestra-escencia">
+        <div class="section-title">
+            <h3>Bienvenidos a Bodas y Eventos.</h3>
         </div>
-    </section> -->
+        <article class="card">
+            <div class="card-content">
+                <p>
+                    Bienvenidos a nuestra página, donde encontrarán todo lo que necesitan para el día más especial.
+                    Somos expertos en la organización de bodas y eventos en Concepción y sus alrededores, 
+                    trabajando con los mejores proveedores de la zona. En nuestra web, descubrirán desde exclusivos centros de eventos hasta todos los servicios indispensables para hacer realidad la boda de sus sueños.
+                    Exploren, inspírense y comiencen a planear con nosotros.
+                </p>
 
-    <!-- GALERIA -->
+            </div>
+        </article>
+
+    </section>
+    
     <section id="galeria" class="seccion-galeria">
         <div class="container-titulo">
-            <h2>Inspiración</h2>
-            <p class="subtitulo">Rincones mágicos</p>
+            <h2>Rincones mágicos</h2>
         </div>
 
         <div class="swiper galeria-slider">
@@ -130,35 +145,8 @@
         </div>
     </section>
 
-    <!-- ¿QUÉ ES LA PLATAFORMA?
-    <section class="features">
-        <div class="section-title">
-            <h3>¿Qué ofrecemos?</h3>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-building"></i>
-                <h4>Centros de Eventos</h4>
-                <p>Espacios ideales para todo tipo de celebraciones.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h4>Proveedores</h4>
-                <p>Servicios confiables para complementar tu evento.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-star"></i>
-                <h4>Reseñas</h4>
-                <p>Opiniones reales para tomar mejores decisiones.</p>
-            </div>
-        </div>
-    </section> -->
 
 
-    <!-- CENTROS DESTACADOS -->
     <section id="centros" class="cards-section">
         <div class="section-title">
             <h3>Centros Destacados</h3>
@@ -187,7 +175,6 @@
         </div>
     </section>
 
-    <!-- PROVEEDORES -->
     <section id="proveedores" class="cards-section alt">
         <div class="section-title">
             <h3>Nuestros Proveedores</h3>
@@ -217,7 +204,9 @@
                 <div class="card-content">
                     <span class="category-tag">Fotografía</span>
                     <h4>Gabriel Alvear</h4>
-                    <p>Capturando memorias eternas. Agenda 2026-2027 abierta.</p>
+                    <p>Fotografo profesional de  Bodas y Eventos sociales.
+                        Agenda 2026-2027 abierta.
+                    </p>
                     <a href="https://www.instagram.com/gabriel.alvear.fx/" target="_blank" class="btn primary small">Ver Perfil</a>
                 </div>
             </article>
@@ -288,27 +277,7 @@
         </div>
     </section>
 
-    <!-- RESEÑAS 
-    <section class="reviews">
-        <div class="section-title">
-            <h3>Opiniones</h3>
-        </div>
-
-        <div class="reviews-grid">
-            <div class="review-card">
-                <p>“Excelente experiencia, todo muy bien organizado.”</p>
-                <span>★★★★★</span>
-            </div>
-
-            <div class="review-card">
-                <p>“Fácil de usar y muy profesional.”</p>
-                <span>★★★★☆</span>
-            </div>
-        </div>
-
-    </section>-->
-
-    <!-- LINK-UNETE -->
+   
     <section class="join-us">
         <div class="join-container">
             <div class="join-content">
@@ -316,19 +285,17 @@
                 <p>Únete a la plataforma líder en eventos. Conecta con cientos de parejas que buscan los mejores centros de eventos y proveedores para su gran día.</p>
             </div>
             <div class="join-action">
-                <a href="mailto: BodasyCentros@haciendarutadeloro.cl?subject=Nueva Solicitud de Proveedor&body=Nombre del Negocio:%0D%0ATipo de Servicio:%0D%0ACiudad:%0D%0ATeléfono de contacto:" class="btn-join">
+                <a href="mailto: BodasyEventos@haciendarutadeloro.cl?subject=Nueva Solicitud de Proveedor&body=Nombre del Negocio:%0D%0ATipo de Servicio:%0D%0ACiudad:%0D%0ATeléfono de contacto:" class="btn-join">
                     ¡Quiero Sumarme!
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer" id="contacto">
         <p>© 2026 Plataforma de Eventos · Todos los derechos reservados</p>
     </footer>
 
-    <!-- JS global -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="public/js/main.js"></script>

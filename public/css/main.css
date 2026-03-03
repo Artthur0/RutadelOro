@@ -1,27 +1,18 @@
-/* =====================
-    VARIABLES GLOBALES (PALETA WEDDING GOLD & ROSE)
-===================== */
 :root {
-    /* Paleta de Colores Solicitada */
-    --dorado: #D4AF37;          /* Dorado Principal */
-    --champagne: #E6BE8A;       /* Champagne dorado */
-    --rosa-empolvado: #D8A7B1;  /* Rosa empolvado */
-    --rosa-suave: #F3D1D8;      /* Rosa suave */
-    --crema: #FFF3E2;           /* Crema cálida (Fondo base) */
     
-    /* Auxiliares */
+    --dorado: #D4AF37;
+    --champagne: #E6BE8A;
+    --rosa-empolvado: #D8A7B1;
+    --rosa-suave: #F3D1D8;     
+    --crema: #FFF3E2;
     --white: #ffffff;
-    --text-main: #353535;       
+    --text-main: #353535;
     --text-light: #6e6e6e;
-    
-    /* Configuración */
     --radius: 12px;
-    --shadow: 0 12px 24px rgba(212, 175, 55, 0.1); 
+    --shadow: 0 12px 24px rgba(212, 175, 55, 0.1);
 }
 
-/* =====================
-    RESET BÁSICO
-===================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -35,9 +26,7 @@ body {
     line-height: 1.6;
 }
 
-/* =====================
-    NAVBAR
-===================== */
+
 .navbar {
     background-color: var(--crema);
     border-bottom: 1px solid var(--champagne);
@@ -55,7 +44,6 @@ body {
     align-items: center;
 }
 
-/* Contenedor del Logo (Texto + Imagen) */
 .logo-container {
     display: flex;
     align-items: center;
@@ -67,7 +55,7 @@ body {
     height: 45px;
     width: auto;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Para integrar el fondo blanco si lo tiene */
+    mix-blend-mode: multiply;
 }
 
 .logo-text {
@@ -88,9 +76,7 @@ body {
     color: var(--rosa-empolvado);
 }
 
-/* =====================
-    HERO
-===================== */
+
 .hero {
     background: linear-gradient(180deg, var(--crema) 0%, var(--white) 100%);
     padding: 5rem 1.5rem;
@@ -137,9 +123,7 @@ body {
     color: var(--white);
 }
 
-/* =====================
-    SECCIONES GENERALES
-===================== */
+
 section {
     padding: 4.5rem 1.5rem;
 }
@@ -164,9 +148,7 @@ section {
     margin: 15px auto 0;
 }
 
-/* =====================
-    FEATURES (¿Qué ofrecemos?)
-===================== */
+
 .features {
     background-color: var(--white);
 }
@@ -198,9 +180,7 @@ section {
     margin-bottom: 1.2rem;
 }
 
-/* =====================
-    CARDS GRID (Centros y Proveedores)
-===================== */
+
 .cards-section {
     background-color: var(--crema);
 }
@@ -242,7 +222,7 @@ section {
     margin-bottom: 1.2rem;
 }
 
-/* Etiquetas de categoría para proveedores */
+
 .category-tag {
     display: inline-block;
     background-color: var(--crema);
@@ -264,21 +244,12 @@ section {
     color: white;
 }
 
-/* =====================
-    PROVEEDORES (Sección Alterna)
-===================== */
+
 .cards-section.alt {
     background-color: var(--rosa-suave);
 }
 
-/* =====================
-    MEGA MENÚ / DROPDOWN (CORREGIDO)
-===================== */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left: 1.2rem;
-}
+
 
 .dropdown .dropbtn {
     cursor: pointer;
@@ -290,34 +261,37 @@ section {
     font-weight: 500;
 }
 
-/* EL CONTENEDOR BLANCO */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
 .dropdown-content {
-    display: none; /* Se activa con el hover */
+    display: none; 
     position: absolute;
     background-color: var(--white);
-    min-width: 750px; /* Ancho suficiente para que nada se amontone */
+    right: 0;            
+    left: auto;         
+    transform: none;
+    width: 600px;        
+    max-width: 90vw;     
+    padding: 2rem;
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    padding: 2rem;
     z-index: 1000;
     top: 100%;
-    left: -200px; /* Ajusta este valor para centrar el cuadro bajo el botón */
-    
-    /* ESTO ES LO QUE FALTA: La rejilla de 3 columnas */
-    grid-template-columns: 1fr 1.2fr 1.5fr; 
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     border-top: 4px solid var(--dorado);
 }
 
-/* ACTIVACIÓN */
 .dropdown:hover .dropdown-content {
-    display: grid; /* Cambia a grid al pasar el mouse */
+    display: grid; 
     animation: fadeUp 0.3s ease;
 }
 
-/* Estilos para las columnas dentro del menú */
 .dropdown-content h4 {
-    color: var(--dorado); /* O var(--rosa-empolvado) si prefieres */
+    color: var(--dorado); 
     margin-bottom: 1.2rem;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -330,7 +304,7 @@ section {
     color: var(--text-light);
     padding: 8px 0;
     text-decoration: none;
-    display: flex; /* Para alinear icono y texto */
+    display: flex;
     align-items: center;
     gap: 10px;
     transition: all 0.2s;
@@ -348,14 +322,12 @@ section {
     background-color: transparent;
 }
 
-/* Iconos de las categorías */
 .link-with-icon i {
     color: var(--dorado);
     width: 25px;
     text-align: center;
 }
 
-/* Caja de promociones (Derecha) */
 .promo-container {
     display: flex;
     flex-direction: column;
@@ -383,9 +355,6 @@ section {
     color: var(--text-main);
 }
 
-/* =====================
-    FOOTER
-===================== */
 .footer {
     background-color: var(--text-main);
     color: var(--crema);
@@ -393,9 +362,6 @@ section {
     padding: 2.5rem;
 }
 
-/* =====================
-    RESPONSIVE
-===================== */
 @media (min-width: 768px) {
     .features-grid, .cards-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -407,11 +373,8 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* =====================
-   SECCIÓN ÚNETE A NOSOTROS 
-===================== */
 .join-us {
-    background-color: var(--rosa-suave); /* Fondo rosa suave para diferenciarlo */
+    background-color: var(--rosa-suave); 
     padding: 4rem 1.5rem;
     border-top: 1px solid var(--champagne);
     border-bottom: 1px solid var(--champagne);
@@ -430,7 +393,7 @@ section {
     color: var(--dorado);
     font-size: 2rem;
     margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-family: 'Playfair Display', serif; 
 }
 
 .join-content p {
@@ -452,7 +415,7 @@ section {
     gap: 12px;
     box-shadow: 0 8px 20px rgba(216, 167, 177, 0.3);
     transition: all 0.3s ease;
-    white-space: nowrap; /* Evita que el botón se rompa en dos líneas */
+    white-space: nowrap; 
 }
 
 .btn-join:hover {
@@ -461,7 +424,6 @@ section {
     box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
 }
 
-/* Responsivo para móviles */
 @media (max-width: 768px) {
     .join-container {
         flex-direction: column;
@@ -473,34 +435,32 @@ section {
     }
 }
 
-/* Contenedor principal */
 .galeria-slider {
-    width: 95%; /* Deja un pequeño margen a los lados para que respire */
-    max-width: 1200px; /* Evita que en monitores grandes se vea gigante */
+    width: 95%; 
+    max-width: 1200px; 
     margin: 0 auto; 
     padding: 20px 0 !important;
     overflow: hidden;
 }
 
-/* La caja de la imagen */
 .galeria-slide {
     display: block;
-    height: 500px; /* Reducimos de 700px a 500px para mejor visibilidad */
+    height: 500px; 
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
 }
 
 .galeria-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la imagen centrada y llenando el espacio */
-    object-position: center; /* Asegura que el centro de la foto sea lo que se vea */
+    object-fit: cover; 
+    object-position: center; 
 }
 
 @media (max-width: 768px) {
     .galeria-slide {
-        height: 300px; /* Altura más cómoda para pantallas verticales */
+        height: 300px; 
     }
     .galeria-slider {
         width: 100%;
@@ -508,71 +468,59 @@ section {
     }
 }
 
-/* =========================================
-   ESTILOS GENERALES (PARA MÓVIL POR DEFECTO)
-   ========================================= */
 
 .seccion-hero {
-  /* En móvil, los elementos se apilan uno sobre otro */
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--crema); /* Color de fondo para la zona del texto en móvil */
+  background-color: var(--crema);
 }
 
-/* La foto de fondo en móvil va arriba */
+
 .seccion-hero .imagen-fondo {
   width: 100%;
-  height: 250px; /* Ajusta la altura de la foto en celular */
+  height: 250px;
   object-fit: cover;
-  order: 1; /* Asegura que la imagen sea lo primero en mostrarse */
+  order: 1; 
 }
 
-/* El cuadro del título en móvil va abajo */
 .contenedor-texto {
-  order: 2; /* El texto va después de la imagen */
+  order: 2;
   background: var(--crema);
-  padding: 40px 20px; /* Espaciado interno para el texto */
-  text-align: center; /* Centramos el texto para móvil */
-  width: 100%; /* Ocupa todo el ancho */
-  position: relative; /* Para posicionar la curva */
+  padding: 40px 20px; 
+  text-align: center;
+  width: 100%;
+  position: relative; 
 }
 
-/* --- LA CURVA PARA MÓVIL (ARRIBA DEL TEXTO) --- */
 .contenedor-texto::before {
   content: "";
   position: absolute;
-  top: -50px; /* Coloca la curva sobre el cuadro de texto */
+  top: -50px; 
   left: 0;
   width: 100%;
-  height: 50px; /* Altura de la curva */
+  height: 50px; 
   background: var(--crema);
-  /* Crea la curva cóncava hacia arriba */
+
   border-radius: 50% 50% 0 0; 
 }
 
 .contenedor-texto h1 {
   margin: 0;
-  font-size: 2rem; /* Tamaño de fuente más pequeño para móvil */
+  font-size: 2rem;
   line-height: 1.3;
 }
 
 
-/* =========================================
-   MEDIA QUERY: ESTILOS PARA ESCRITORIO
-   (Pantallas mayores a 768px de ancho)
-   ========================================= */
 @media (min-width: 768px) {
   
   .seccion-hero {
-    /* En computadora, volvemos al diseño horizontal */
     position: relative;
-    height: 80vh; /* Altura de la sección hero en desktop */
-    flex-direction: row; /* Elementos uno al lado del otro */
+    height: 80vh; 
+    flex-direction: row; 
     overflow: hidden;
   }
 
-  /* La foto vuelve a ser el fondo completo */
   .seccion-hero .imagen-fondo {
     position: absolute;
     top: 0;
@@ -580,31 +528,32 @@ section {
     width: 100%;
     height: 100%;
     z-index: 1;
-    order: unset; /* Restablece el orden por defecto */
+    order: unset; 
   }
 
-  /* El cuadro de texto vuelve a 'flotar' a la izquierda */
   .contenedor-texto {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 2%;
     transform: translateY(-50%);
-    width: fit-content;
-    max-width: 500px;
-    padding: 60px 80px 60px 40px; /* Padding asimétrico para la curva */
+    
+    width: auto; 
+    max-width: 400px; 
+    padding: 50px 60px 50px 40px;
+    
     z-index: 2;
-    text-align: left; /* Alineación a la izquierda */
-    /* Curva hacia la derecha (desktop) */
-    border-radius: 0 80px 80px 0; 
-    order: unset; /* Restablece el orden por defecto */
+    text-align: left; 
+    border-radius: 40px 80px 80px 40px; 
+    order: unset; 
+    box-shadow: 15px 0 30px rgba(0,0,0,0.1);
   }
 
-  /* --- ELIMINAMOS LA CURVA DE MÓVIL EN DESKTOP --- */
   .contenedor-texto::before {
     display: none;
   }
 
   .contenedor-texto h1 {
-    font-size: 3rem; /* Tamaño de fuente más grande para computadora */
+    font-size: 2.8rem;
+    line-height: 1.1;
   }
 }
