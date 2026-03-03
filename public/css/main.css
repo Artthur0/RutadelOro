@@ -507,3 +507,104 @@ section {
         padding: 10px 0 !important;
     }
 }
+
+/* =========================================
+   ESTILOS GENERALES (PARA MÓVIL POR DEFECTO)
+   ========================================= */
+
+.seccion-hero {
+  /* En móvil, los elementos se apilan uno sobre otro */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--crema); /* Color de fondo para la zona del texto en móvil */
+}
+
+/* La foto de fondo en móvil va arriba */
+.seccion-hero .imagen-fondo {
+  width: 100%;
+  height: 250px; /* Ajusta la altura de la foto en celular */
+  object-fit: cover;
+  order: 1; /* Asegura que la imagen sea lo primero en mostrarse */
+}
+
+/* El cuadro del título en móvil va abajo */
+.contenedor-texto {
+  order: 2; /* El texto va después de la imagen */
+  background: var(--crema);
+  padding: 40px 20px; /* Espaciado interno para el texto */
+  text-align: center; /* Centramos el texto para móvil */
+  width: 100%; /* Ocupa todo el ancho */
+  position: relative; /* Para posicionar la curva */
+}
+
+/* --- LA CURVA PARA MÓVIL (ARRIBA DEL TEXTO) --- */
+.contenedor-texto::before {
+  content: "";
+  position: absolute;
+  top: -50px; /* Coloca la curva sobre el cuadro de texto */
+  left: 0;
+  width: 100%;
+  height: 50px; /* Altura de la curva */
+  background: var(--crema);
+  /* Crea la curva cóncava hacia arriba */
+  border-radius: 50% 50% 0 0; 
+}
+
+.contenedor-texto h1 {
+  margin: 0;
+  font-size: 2rem; /* Tamaño de fuente más pequeño para móvil */
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   MEDIA QUERY: ESTILOS PARA ESCRITORIO
+   (Pantallas mayores a 768px de ancho)
+   ========================================= */
+@media (min-width: 768px) {
+  
+  .seccion-hero {
+    /* En computadora, volvemos al diseño horizontal */
+    position: relative;
+    height: 80vh; /* Altura de la sección hero en desktop */
+    flex-direction: row; /* Elementos uno al lado del otro */
+    overflow: hidden;
+  }
+
+  /* La foto vuelve a ser el fondo completo */
+  .seccion-hero .imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    order: unset; /* Restablece el orden por defecto */
+  }
+
+  /* El cuadro de texto vuelve a 'flotar' a la izquierda */
+  .contenedor-texto {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: fit-content;
+    max-width: 500px;
+    padding: 60px 80px 60px 40px; /* Padding asimétrico para la curva */
+    z-index: 2;
+    text-align: left; /* Alineación a la izquierda */
+    /* Curva hacia la derecha (desktop) */
+    border-radius: 0 80px 80px 0; 
+    order: unset; /* Restablece el orden por defecto */
+  }
+
+  /* --- ELIMINAMOS LA CURVA DE MÓVIL EN DESKTOP --- */
+  .contenedor-texto::before {
+    display: none;
+  }
+
+  .contenedor-texto h1 {
+    font-size: 3rem; /* Tamaño de fuente más grande para computadora */
+  }
+}
