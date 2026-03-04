@@ -1,17 +1,13 @@
-/* RESET GENERAL */
-/* =========================================
-   RESET GENERAL Y AJUSTES GLOBALES
-   ========================================= */
 * {
-  box-sizing: border-box; /* VITAL: El padding no aumenta el ancho total */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* ELIMINA EL VACÍO BLANCO: Corta lo que se salga a la derecha */
-  position: relative; /* Mantiene la estructura sólida */
+  overflow-x: hidden;
+  position: relative; 
 }
 
 body {
@@ -20,14 +16,12 @@ body {
   background-color: #fff;
 }
 
-/* Imágenes responsivas por defecto */
 img {
-  max-width: 100%; /* Ninguna imagen puede ser más ancha que su contenedor */
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* TIPOGRAFÍA */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
@@ -36,7 +30,6 @@ h1 { font-size: 2.4rem; }
 h2 { font-size: 1.9rem; margin-bottom: 16px; }
 h3 { font-size: 1.2rem; }
 
-/* HERO */
 .hero {
   height: 80vh;
   background: url("../Rutadeloro/imagenes/2.jpg") center / cover no-repeat;
@@ -60,7 +53,6 @@ h3 { font-size: 1.2rem; }
   border-radius: 6px;
 }
 
-/* NAVBAR */
 .navbar ul {
   display: flex;
   justify-content: center; /* Centrado */
@@ -92,12 +84,11 @@ h3 { font-size: 1.2rem; }
   position: relative; /* Necesario para la línea dorada */
 }
 
-/* EFECTO AL PASAR EL MOUSE */
 .navbar a:hover {
   color: #D4AF37; /* Dorado mate */
 }
 
-/* LÍNEA DORADA DEBAJO DEL TEXTO */
+
 .navbar a::after {
   content: '';
   position: absolute;
@@ -109,8 +100,7 @@ h3 { font-size: 1.2rem; }
   transition: width 0.3s ease;
 }
 
-/* GALERÍA */
-/* SECCIÓN GALERÍA */
+
 .seccion-galeria {
     padding: 80px 20px;
     background: #fff; /* Fondo blanco para limpiar la vista */
@@ -123,7 +113,6 @@ h3 { font-size: 1.2rem; }
     margin: 0 auto;
 }
 
-/* LA CAJA DE LA FOTO (SLIDE) */
 .galeria-slide {
     position: relative;
     overflow: hidden;
@@ -133,7 +122,6 @@ h3 { font-size: 1.2rem; }
     height: 450px; /* ALTO FIJO: Esto hace que todas las cajas sean iguales */
 }
 
-/* LA IMAGEN EN SÍ */
 .galeria-slide img {
     width: 100%;
     height: 100%;
@@ -142,12 +130,10 @@ h3 { font-size: 1.2rem; }
     transition: transform 0.5s ease;
 }
 
-/* EFECTO HOVER (ZOOM SUAVE) */
 .galeria-slide:hover img {
     transform: scale(1.1); /* La imagen crece un poquito al pasar el mouse */
 }
 
-/* ÍCONO DE LUPA (Aparece al pasar el mouse) */
 .galeria-overlay {
     position: absolute;
     top: 0;
@@ -174,15 +160,12 @@ h3 { font-size: 1.2rem; }
     opacity: 1; /* Se hace visible al pasar el mouse */
 }
 
-/* RESPONSIVE: Ajustar altura en celulares */
 @media (max-width: 768px) {
     .galeria-slide {
         height: 350px; /* Un poco más bajas en celular */
     }
 }
 
-/* COMENTARIOS */
-/* SECCIÓN OPINIONES (Nuevo diseño) */
 .seccion-opiniones {
     padding: 80px 20px;
     background-color: #F9F7F2; /* Fondo Crema suave para destacar */
@@ -200,14 +183,14 @@ h3 { font-size: 1.2rem; }
     margin-bottom: 10px;
 }
 
-/* Estilos del Slider Swiper */
+
 .opiniones-slider {
     padding: 30px 10px 60px 10px !important; /* Padding extra abajo para los puntitos de paginación */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* DISEÑO DE LA TARJETA DE OPINIÓN */
+
 .opinion-card {
     background: #fff;
     padding: 40px 30px;
@@ -249,7 +232,7 @@ h3 { font-size: 1.2rem; }
     letter-spacing: 2px;
 }
 
-/* PERSONALIZAR FLECHAS Y PUNTOS DE SWIPER */
+
 .swiper-button-next, .swiper-button-prev {
     color: #D4AF37 !important; /* Flechas doradas */
 }
@@ -258,7 +241,7 @@ h3 { font-size: 1.2rem; }
     background: #D4AF37 !important; /* Punto activo dorado */
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .hero {
     justify-content: center;
@@ -279,7 +262,6 @@ h3 { font-size: 1.2rem; }
 }
 
 
-/* DATOS DE INTERÉS */
 #datos-interes {
   max-width: 1100px;
   margin: 60px auto;
@@ -306,7 +288,7 @@ h3 { font-size: 1.2rem; }
   color: #c9a24d; /* dorado suave */
 }
 
-/* BOTÓN */
+
 .ver-servicios-btn {
   display: inline-block;
   margin-top: 30px;
@@ -323,7 +305,7 @@ h3 { font-size: 1.2rem; }
   background: #fff6dc;
 }
 
-/* MODAL GENERAL */
+
 .modal {
   position: fixed;
   inset: 0;
@@ -334,7 +316,6 @@ h3 { font-size: 1.2rem; }
   z-index: 1000;
 }
 
-/* CAJA DEL MODAL */
 .modal-content {
   background: #ffffff;
   border-radius: 16px;
@@ -346,7 +327,6 @@ h3 { font-size: 1.2rem; }
   position: relative;
 }
 
-/* BOTÓN CERRAR */
 .modal-close {
   position: absolute;
   top: 14px;
@@ -362,7 +342,7 @@ h3 { font-size: 1.2rem; }
   color: #000;
 }
 
-/* LISTA DE SERVICIOS */
+
 .servicios-lista {
   list-style: disc;
   padding-left: 20px;
@@ -374,7 +354,7 @@ h3 { font-size: 1.2rem; }
   font-size: 0.95rem;
 }
 
-/*Seccion espacios*/
+
 
 .espacios {
   margin-top: 60px;
@@ -419,7 +399,7 @@ h3 { font-size: 1.2rem; }
 }
 
 
-/* CONTENIDO OCULTO */
+
 .espacios-extra {
   display: none;
   margin-top: 30px;
@@ -442,7 +422,7 @@ h3 { font-size: 1.2rem; }
   margin-bottom: 8px;
 }
 
-/* SECCIÓN SERVICIOS */
+
 #servicios {
     background-color: #F9F7F2; /* Fondo crema suave */
     padding: 80px 20px;
@@ -467,7 +447,7 @@ h3 { font-size: 1.2rem; }
     font-style: italic;
 }
 
-/* GRID DE TARJETAS */
+
 .servicios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -475,7 +455,7 @@ h3 { font-size: 1.2rem; }
     justify-content: center;
 }
 
-/* DISEÑO DE CADA TARJETA */
+
 .servicio-card {
     background: #ffffff;
     padding: 35px 25px;
@@ -485,14 +465,14 @@ h3 { font-size: 1.2rem; }
     border: 1px solid rgba(212, 175, 55, 0.2); /* Borde dorado muy sutil */
 }
 
-/* EFECTO AL PASAR EL MOUSE */
+
 .servicio-card:hover {
     transform: translateY(-5px); /* Se levanta un poco */
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     border-color: #D4AF37;
 }
 
-/* ICONOS */
+
 .servicio-card i {
     font-size: 2.5rem;
     color: #D4AF37; /* Dorado */
@@ -512,7 +492,6 @@ h3 { font-size: 1.2rem; }
     line-height: 1.6;
 }
 
-/* SECCIÓN PROVEEDORES */
 #proveedores {
     background-color: #FFFFFF; /* Fondo Blanco para separar secciones visualmente */
     padding: 80px 20px;
@@ -537,7 +516,7 @@ h3 { font-size: 1.2rem; }
     font-family: 'Poppins', sans-serif;
 }
 
-/* GRID DE PROVEEDORES */
+
 .proveedores-grid {
     display: grid;
     /* Esto crea columnas automáticas que se ajustan al tamaño */
@@ -546,7 +525,7 @@ h3 { font-size: 1.2rem; }
     justify-content: center;
 }
 
-/* TARJETA INDIVIDUAL */
+
 .proveedor-item {
     background: #fff;
     padding: 25px 15px;
@@ -560,14 +539,14 @@ h3 { font-size: 1.2rem; }
     gap: 15px;
 }
 
-/* EFECTO HOVER */
+
 .proveedor-item:hover {
     border-color: #D4AF37; /* El borde se pone dorado */
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15); /* Sombra dorada suave */
 }
 
-/* CÍRCULO DEL ICONO */
+
 .icon-circle {
     width: 60px;
     height: 60px;
@@ -602,9 +581,7 @@ h3 { font-size: 1.2rem; }
 }
 
 
-/* =========================================
-   SECCIÓN CONTACTO (PARALLAX)
-   ========================================= */
+
 .contacto-parallax {
     position: relative;
     /* IMPORTANTE: Cambia esta ruta por una foto real tuya, idealmente oscura o de noche */
@@ -614,7 +591,7 @@ h3 { font-size: 1.2rem; }
     text-align: center;
 }
 
-/* Capa oscura para que el texto se lea bien sobre la foto */
+
 .overlay-oscuro {
     position: absolute;
     top: 0;
@@ -632,7 +609,7 @@ h3 { font-size: 1.2rem; }
     margin: 0 auto;
 }
 
-/* Títulos */
+
 .contacto-header h2 {
     font-size: 3rem;
     font-family: 'Playfair Display', serif;
@@ -647,7 +624,7 @@ h3 { font-size: 1.2rem; }
     font-weight: 300;
 }
 
-/* Grid de Tarjetas */
+
 .contacto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -655,7 +632,7 @@ h3 { font-size: 1.2rem; }
     margin-bottom: 80px;
 }
 
-/* Diseño de cada tarjeta */
+
 .contacto-card {
     background: rgba(255, 255, 255, 0.05); /* Efecto cristal muy sutil */
     backdrop-filter: blur(10px);
@@ -669,13 +646,13 @@ h3 { font-size: 1.2rem; }
     align-items: center;
 }
 
-/* Animación al pasar el mouse */
+
 .contacto-card:hover {
     background: #fff; /* Se vuelve blanca */
     transform: translateY(-10px); /* Sube un poco */
 }
 
-/* Iconos */
+
 .icon-box {
     font-size: 2.5rem;
     color: #D4AF37; /* Dorado */
@@ -687,7 +664,7 @@ h3 { font-size: 1.2rem; }
     transform: scale(1.1);
 }
 
-/* Textos dentro de la tarjeta */
+
 .contacto-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -703,7 +680,7 @@ h3 { font-size: 1.2rem; }
     transition: color 0.3s;
 }
 
-/* Flechita "Ver más" */
+
 .cta-link {
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -712,17 +689,17 @@ h3 { font-size: 1.2rem; }
     font-weight: 600;
 }
 
-/* CAMBIOS DE COLOR AL HOVER (Cuando la tarjeta se pone blanca) */
+
 .contacto-card:hover h3 { color: #2b2b2b; }
 .contacto-card:hover p { color: #555; }
 
-/* Destacar la tarjeta de WhatsApp */
+
 .contacto-card.destacado {
     border-color: #D4AF37;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
-/* MAPA */
+
 .mapa-container {
     margin-top: 60px;
     border-radius: 16px;
@@ -741,7 +718,7 @@ h3 { font-size: 1.2rem; }
     margin-bottom: 30px;
 }
 
-/* FOOTER FINAL */
+
 footer {
     background: #111; /* Negro casi puro */
     padding: 30px 20px;
@@ -783,9 +760,7 @@ footer {
     }
 }
 
-/* =========================================
-   SECCIÓN BIENVENIDA (INFORMACIÓN)
-   ========================================= */
+
 .seccion-bienvenida {
     padding: 100px 20px;
     background-color: #fff;
@@ -801,7 +776,7 @@ footer {
     flex-wrap: wrap; /* Para que baje en celular */
 }
 
-/* Columna de Texto */
+
 .texto-bienvenida {
     flex: 1;
     min-width: 300px;
@@ -847,7 +822,7 @@ footer {
     margin-top: 30px;
 }
 
-/* Columna de Imagen */
+
 .imagen-bienvenida {
     flex: 1;
     min-width: 300px;
@@ -862,7 +837,7 @@ footer {
     z-index: 2;
 }
 
-/* Cuadro dorado decorativo detrás de la foto */
+
 .cuadro-decorativo {
     position: absolute;
     top: -20px;
@@ -874,12 +849,10 @@ footer {
     z-index: 1;
 }
 
-/* =========================================
-   SECCIÓN ESPACIOS
-   ========================================= */
+
 .seccion-espacios {
     padding: 80px 20px;
-    background-color: #F9F7F2; /* Fondo crema */
+    background-color: #F9F7F2;
 }
 
 .container-espacios {
@@ -892,7 +865,7 @@ footer {
     margin-bottom: 50px;
 }
 
-/* Banner de Capacidad (Destacado) */
+
 .capacidad-banner {
     background: #fff;
     border-radius: 16px;
@@ -922,7 +895,7 @@ footer {
     color: #666;
 }
 
-/* Grid de detalles de espacios */
+
 .espacios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -931,7 +904,7 @@ footer {
 
 .espacio-item {
     background: transparent;
-    border: 1px solid rgba(0,0,0,0.05); /* Borde muy sutil */
+    border: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px;
     padding: 25px;
     text-align: center;
@@ -953,7 +926,7 @@ footer {
 }
 
 .espacio-item:hover i {
-    color: #D4AF37; /* Icono se pone dorado al pasar el mouse */
+    color: #D4AF37;
 }
 
 .espacio-item h4 {
@@ -970,7 +943,7 @@ footer {
     line-height: 1.5;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .container-flex {
         flex-direction: column;
@@ -987,15 +960,12 @@ footer {
     }
 }
 
-/* =========================================
-   ESTILOS SOLO PARA MÓVIL (RESPONSIVE)
-   ========================================= */
 @media screen and (max-width: 768px) {
 
-    /* 1. NAVBAR MÓVIL (Hamburguesa) */
+    
     header {
-        padding: 15px 20px; /* Barra más delgada */
-        background: #F9F7F2; /* Fondo sólido crema */
+        padding: 15px 20px;
+        background: #F9F7F2;
     }
 
     .navbar {
@@ -1010,7 +980,6 @@ footer {
         gap: 0;
     }
 
-    /* Logo texto en móvil */
     .logo-movil {
         display: block !important;
         font-family: 'Playfair Display', serif;
@@ -1020,7 +989,6 @@ footer {
         text-decoration: none;
     }
 
-    /* Botón Hamburguesa */
     .menu-toggle {
         display: block !important;
         font-size: 1.8rem;
@@ -1028,10 +996,9 @@ footer {
         color: #4A4A4A;
     }
 
-    /* El menú oculto por defecto */
     .nav-menu {
         position: absolute;
-        top: 100%; /* Justo debajo de la barra */
+        top: 100%;
         left: 0;
         width: 100%;
         background: #fff;
@@ -1040,15 +1007,13 @@ footer {
         padding: 20px 0;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         
-        /* Animación de apertura */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
     }
 
-    /* Clase para abrir el menú */
     .nav-menu.active {
-        max-height: 500px; /* Altura suficiente para mostrar todo */
+        max-height: 500px;
     }
 
     .nav-menu li {
@@ -1060,55 +1025,52 @@ footer {
         display: block;
         padding: 15px;
         font-size: 1rem;
-        border-bottom: 1px solid #f0f0f0; /* Línea separadora sutil */
+        border-bottom: 1px solid #f0f0f0;
     }
     
     .nav-menu a:hover {
         background: #F9F7F2;
     }
 
-    /* 2. TIPOGRAFÍA MÁS AMIGABLE */
-    h1 { font-size: 2rem; } /* Título Hero más chico */
+  
+    h1 { font-size: 2rem; }
     h2 { font-size: 1.8rem; }
     p { font-size: 0.95rem; }
 
-    /* 3. HERO (PORTADA) */
+
     .hero {
-        height: 100vh; /* Pantalla completa real */
+        height: 100vh;
         background-position: center center;
     }
     
     .hero-content {
-        margin-left: 0; /* Quitamos el margen de PC */
+        margin-left: 0;
         margin-right: 0;
-        width: 100%;    /* Ocupa todo el ancho */
-        padding: 40px 20px; /* Relleno interno seguro */
-        border-radius: 0; /* En móvil se ve mejor sin bordes redondeados si ocupa todo */
-        background: rgba(0,0,0,0.6); /* Un poco más oscuro para leer mejor */
+        width: 100%;
+        padding: 40px 20px;
+        border-radius: 0;
+        background: rgba(0,0,0,0.6);
     }
 
-    /* 4. AJUSTE DE GRILLAS (TARJETAS) */
-    /* Forzamos que las tarjetas ocupen el ancho disponible y no se salgan */
+
     .servicios-grid, 
     .proveedores-grid, 
     .espacios-grid, 
     .datos-grid,
     .contacto-grid {
-        grid-template-columns: 1fr; /* Una sola columna estricta */
+        grid-template-columns: 1fr;
         width: 100%;
-        padding: 0; /* Quitamos padding lateral del grid para usar el del contenedor */
+        padding: 0;
     }
 
     .servicio-card, 
     .proveedor-item, 
     .dato-item, 
     .espacio-item {
-        min-width: 0; /* Permite que la tarjeta se encoja si es necesario */
+        min-width: 0;
         width: 100%;
     }
 
-    /* 5. ARREGLO PARALLAX (Contacto) */
-    /* En celulares, 'fixed' suele fallar. Lo cambiamos a 'scroll' */
     .contacto-parallax {
         background-attachment: scroll;
         padding: 60px 15px;
@@ -1118,9 +1080,8 @@ footer {
         font-size: 2rem;
     }
     
-    /* Mapa ajustado */
     iframe {
-        height: 300px; /* Mapa un poco más bajo para no ocupar todo el scroll */
+        height: 300px;
     }
 
     .container-servicios, 
@@ -1130,12 +1091,11 @@ footer {
     .container-contacto {
         width: 100%;
         padding-left: 15px;
-        padding-right: 15px; /* Margen de seguridad a los lados */
-        overflow: hidden; /* Doble seguridad */
+        padding-right: 15px;
+        overflow: hidden;
     }
 }
 
-/* ESTILOS BASE QUE FALTABAN PARA DESKTOP (Para que lo de arriba funcione) */
 .logo-movil, .menu-toggle {
-    display: none; /* Ocultos en PC */
+    display: none; 
 }
